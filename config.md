@@ -57,7 +57,7 @@ SSML_FILE = OUTPUT_DIR / "script.ssml"
 
 REPORT_FILE = OUTPUT_DIR / "speech_report.json"
 
-AUDIO_FILE = OUTPUT_DIR / "Audio_Final.mp3"
+AUDIO_FILE = OUTPUT_DIR / "Audio_Governance_SouthAmerica.mp3"
 
 LOG_FILE = LOG_DIR / "speech.log"
 
