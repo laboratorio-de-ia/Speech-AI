@@ -1,50 +1,73 @@
 # 🎙️ Speech AI Pipeline
 
-A professional **Text-to-Speech (TTS)** pipeline that converts
-structured presentation content into natural-sounding audio narration
-using **Microsoft Edge TTS**.
+> A modular Text-to-Speech (TTS) pipeline that converts presentation
+> scripts into natural English audio using Microsoft Edge TTS.
 
-## 🚀 Features
+![Python](https://img.shields.io/badge/Python-3.11+-blue)
+![Platform](https://img.shields.io/badge/Platform-Windows-lightgrey)
+![License](https://img.shields.io/badge/License-MIT-green)
 
--   Slide-based content processing
--   Speech optimization for natural narration
+------------------------------------------------------------------------
+
+# Overview
+
+Speech AI Pipeline automates the complete process of transforming
+structured presentation text into professional narration.
+
+The project is organized into independent modules, making it easy to
+maintain and extend.
+
+------------------------------------------------------------------------
+
+# Features
+
+-   Presentation text analysis
+-   Narration optimization
+-   Natural speech generation
 -   Microsoft Edge TTS integration
 -   MP3 audio generation
 -   Modular architecture
--   Easy to extend
+-   Git version control
 
-## 🏗️ Architecture
+------------------------------------------------------------------------
+
+# Architecture
 
 ``` text
-Text Input
-    │
-    ▼
+Input Script
+     │
+     ▼
 Text Analyzer
-    │
-    ▼
+     │
+     ▼
 Narration Builder
-    │
-    ▼
+     │
+     ▼
 Speech Optimizer
-    │
-    ▼
+     │
+     ▼
 Edge TTS Engine
-    │
-    ▼
-MP3 Audio
+     │
+     ▼
+Audio MP3
 ```
 
-## 📁 Project Structure
+------------------------------------------------------------------------
+
+# Project Structure
 
 ``` text
 SpeechAI/
+│
 ├── core/
 │   ├── text_analyzer.py
 │   ├── narration_builder.py
 │   ├── ssml_builder.py
 │   └── tts_engine.py
+│
 ├── models/
 │   └── presentation.py
+│
 ├── output/
 ├── logs/
 ├── main.py
@@ -52,10 +75,13 @@ SpeechAI/
 └── README.md
 ```
 
-## ⚙️ Requirements
+------------------------------------------------------------------------
 
--   Python 3.11+
--   edge-tts
+# Requirements
+
+-   Python 3.11 or newer
+-   FFmpeg (optional)
+-   Microsoft Edge TTS
 
 Install dependencies:
 
@@ -63,42 +89,71 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-## ▶️ Running
+------------------------------------------------------------------------
+
+# Running
 
 ``` bash
 python main.py
 ```
 
-The generated files are saved in the `output/` directory.
+Generated files are written to the **output** directory.
 
-## 🎤 Default Voice
+------------------------------------------------------------------------
 
--   Voice: `en-US-GuyNeural`
--   Optimized for professional English narration.
+# Voice Configuration
 
-## 📦 Output
+Default voice:
 
-Typical generated files:
+-   `en-US-GuyNeural`
 
--   `output/narration.txt`
--   `output/speech.xml`
--   `output/Audio_Governance_SouthAmerica.mp3`
+Output file:
 
-## 🛣️ Roadmap
+``` text
+output/Audio_Governance_SouthAmerica.mp3
+```
 
--   FastAPI REST API
+------------------------------------------------------------------------
+
+# Typical Workflow
+
+1.  Read the presentation text.
+2.  Analyze slides and sections.
+3.  Build narration.
+4.  Optimize speech flow.
+5.  Generate MP3 audio.
+
+------------------------------------------------------------------------
+
+# Roadmap
+
+-   FastAPI API
 -   Docker support
 -   Web interface
--   Multiple voices
+-   Multi-language support
 -   Azure Speech integration
--   Automatic speech optimization
+-   Multiple voices
+-   Automatic pronunciation dictionary
 
-## 👤 Author
+------------------------------------------------------------------------
+
+# Contributing
+
+1.  Fork the repository.
+2.  Create a feature branch.
+3.  Commit your changes.
+4.  Open a Pull Request.
+
+------------------------------------------------------------------------
+
+# License
+
+MIT License.
+
+------------------------------------------------------------------------
+
+# Author
 
 **Rodrigo Magalhães**
 
 AI Engineering • Cloud • Automation • Speech Systems
-
-## 📄 License
-
-This project is intended for educational and professional purposes.
