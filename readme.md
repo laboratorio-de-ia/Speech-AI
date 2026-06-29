@@ -157,3 +157,5 @@ MIT License.
 **Rodrigo Magalhães**
 
 AI Engineering • Cloud • Automation • Speech Systems
+
+Obrigado Senhor
