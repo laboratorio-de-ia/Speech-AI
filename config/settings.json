@@ -1,0 +1,29 @@
+{
+    "input": {
+        "script_file": "input/script.txt"
+    },
+    "tts": {
+        "provider": "edge",
+        "language": "en-US",
+        "voice": "en-US-GuyNeural",
+        "rate": "-15%",
+        "volume": "+0%",
+        "pitch": "+0Hz"
+    },
+
+    "output": {
+        "directory": "output",
+        "filename": "Audio_Governance_SouthAmerica.mp3"
+    },
+
+    "speech": {
+        "pause_short": "...",
+        "pause_long": "",
+        "split_long_sentences": true
+    },
+
+    "project": {
+        "name": "Speech AI Pipeline",
+        "version": "1.0.0"
+    }
+}

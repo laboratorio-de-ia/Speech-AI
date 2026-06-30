@@ -23,7 +23,7 @@ from models.presentation import Presentation
 logger = logging.getLogger(__name__)
 
 
-class SSMLBuilder:
+class SpeechBuilder:
 
     def __init__(self, cfg: ConfigManager):
 

@@ -2,25 +2,26 @@
 =========================================================
 TTS Engine - Speech AI
 ---------------------------------------------------------
-Sprint 6.4.4
+Application Service
 
-Responsável pela geração de áudio utilizando o provider
-configurado.
+Responsável apenas por:
 
-Nesta versão continua utilizando Edge TTS, porém já
-preparado para evolução para múltiplos providers.
+- Ler o texto de narração
+- Selecionar o Provider
+- Solicitar a geração do áudio
+
+Toda implementação do mecanismo TTS fica isolada
+nos Providers.
 
 Author: Rodrigo Magalhães
 =========================================================
 """
 
-import asyncio
-import logging
 from pathlib import Path
-
-import edge_tts
+import logging
 
 from config.config_manager import ConfigManager
+from providers import ProviderFactory
 
 logger = logging.getLogger(__name__)
 
@@ -33,10 +34,7 @@ class TTSEngine:
 
         self.cfg = cfg
 
-        self.voice = cfg.voice
-        self.rate = cfg.rate
-        self.pitch = cfg.pitch
-        self.volume = cfg.volume
+        self.provider = ProviderFactory.create(cfg)
 
         self.output_path = (
             Path(cfg.output_directory)
@@ -50,48 +48,33 @@ class TTSEngine:
         print()
 
         print("========== TTS CONFIG ==========")
-        print(f"Voice   : {self.voice}")
-        print(f"Rate    : {self.rate}")
-        print(f"Pitch   : {self.pitch}")
-        print(f"Volume  : {self.volume}")
-        print(f"Output  : {self.output_path}")
+
+        print(f"Provider : {self.cfg.provider}")
+
+        print(f"Voice    : {self.cfg.voice}")
+
+        print(f"Rate     : {self.cfg.rate}")
+
+        print(f"Pitch    : {self.cfg.pitch}")
+
+        print(f"Volume   : {self.cfg.volume}")
+
+        print(f"Output   : {self.output_path}")
+
         print("================================")
+
         print()
 
     # -------------------------------------------------
 
-    async def _generate_audio(
-        self,
-        text: str,
-        output_path: Path
-    ):
-
-        logger.info(
-            "Generating audio using Edge TTS..."
-        )
-
-        communicate = edge_tts.Communicate(
-            text=text,
-            voice=self.voice,
-            rate=self.rate,
-            pitch=self.pitch,
-            volume=self.volume
-        )
-
-        await communicate.save(
-            str(output_path)
-        )
-
-        logger.info(
-            "Audio generated successfully."
-        )
-
-    # -------------------------------------------------
-
     def generate(
+
         self,
+
         narration_path: str,
+
         output_path: str | Path | None = None
+
     ) -> Path:
 
         narration_path = Path(narration_path)
@@ -99,7 +82,9 @@ class TTSEngine:
         if not narration_path.exists():
 
             raise FileNotFoundError(
+
                 f"Narration file not found:\n{narration_path}"
+
             )
 
         if output_path is None:
@@ -111,25 +96,34 @@ class TTSEngine:
             output_path = Path(output_path)
 
         output_path.parent.mkdir(
+
             parents=True,
+
             exist_ok=True
+
         )
 
         text = narration_path.read_text(
+
             encoding="utf-8"
+
         )
 
         self.show_config()
 
-        asyncio.run(
+        logger.info(
 
-            self._generate_audio(
+            "Generating audio using provider '%s'",
 
-                text=text,
+            self.cfg.provider
 
-                output_path=output_path
+        )
 
-            )
+        self.provider.generate(
+
+            text=text,
+
+            output_path=output_path
 
         )
 

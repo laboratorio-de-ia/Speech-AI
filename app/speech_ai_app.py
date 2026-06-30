@@ -1,0 +1,175 @@
+"""
+=========================================================
+Speech AI Application
+---------------------------------------------------------
+Application Kernel
+
+Responsável por:
+
+- Configuração
+- Pipeline
+- Dependency Injection
+- Logging
+- Services
+
+Author: Rodrigo Magalhães
+=========================================================
+"""
+
+import logging
+from pathlib import Path
+
+from config.config_manager import ConfigManager
+
+from pipeline.text_analyzer import TextAnalyzer
+from pipeline.narration_builder import NarrationBuilder
+from pipeline.speech_builder import SpeechBuilder
+from services.tts_engine import TTSEngine
+
+
+class SpeechAIApp:
+
+    # -------------------------------------------------
+
+    def __init__(self):
+
+        self.cfg = ConfigManager()
+
+        self.project_root = Path(__file__).resolve().parent.parent
+
+        self.logger = logging.getLogger(__name__)
+
+        self._configure_logging()
+
+        self._show_banner()
+
+    # -------------------------------------------------
+
+    def _configure_logging(self):
+
+        logs = self.project_root / "logs"
+
+        logs.mkdir(exist_ok=True)
+
+        logging.basicConfig(
+            filename=logs / "app.log",
+            level=logging.INFO,
+            format="%(asctime)s | %(levelname)s | %(message)s",
+            force=True
+        )
+
+    # -------------------------------------------------
+
+    def _show_banner(self):
+
+        print()
+        print("=" * 60)
+        print(f" {self.cfg.project_name}")
+        print("=" * 60)
+        print(f"Version : {self.cfg.project_version}")
+        print("=" * 60)
+
+    # -------------------------------------------------
+
+    def show_configuration(self):
+
+        self.cfg.show()
+
+    # -------------------------------------------------
+
+    def run(self):
+
+        print()
+        print("Starting pipeline...")
+        print()
+
+        self.logger.info("Pipeline started")
+
+        # ==========================================================
+        # Text Analyzer
+        # ==========================================================
+
+        analyzer = TextAnalyzer(self.cfg)
+
+        presentation = analyzer.run()
+
+        # ==========================================================
+        # Narration Builder
+        # ==========================================================
+
+        narrator = NarrationBuilder(self.cfg)
+
+        narrator.load(presentation)
+
+        narrator.build()
+
+        narration_file = (
+            self.project_root
+            / self.cfg.output_directory
+            / "narration.txt"
+        )
+
+        narrator.export_text(str(narration_file))
+
+        # ==========================================================
+        # Speech Builder
+        # ==========================================================
+
+        speech = SpeechBuilder(self.cfg)
+
+        speech.load(presentation)
+
+        speech.build()
+
+        speech_file = (
+            self.project_root
+            / self.cfg.output_directory
+            / "speech.txt"
+        )
+
+        speech.export(str(speech_file))
+
+        # ==========================================================
+        # TTS Engine
+        # ==========================================================
+
+        tts = TTSEngine(self.cfg)
+
+        audio_file = (
+            self.project_root
+            / self.cfg.output_directory
+            / self.cfg.output_filename
+        )
+
+        tts.generate(
+            narration_path=str(speech_file),
+            output_path=str(audio_file)
+        )
+
+        # ==========================================================
+
+        print()
+        print("=" * 50)
+        print(" Pipeline Finished")
+        print("=" * 50)
+
+        print(f"Slides............. {presentation.total_slides()}")
+        print(f"Words.............. {presentation.statistics.words}")
+        print(
+            f"Estimated Duration. {presentation.statistics.estimated_minutes} min"
+        )
+
+        print()
+        print(f"Narration.......... {narration_file}")
+        print(f"Speech............. {speech_file}")
+        print(f"Audio.............. {audio_file}")
+        print()
+
+        self.logger.info("Pipeline finished")
+
+    # -------------------------------------------------
+
+    @property
+    def config(self):
+
+        return self.cfg
