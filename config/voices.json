@@ -1,0 +1,115 @@
+{
+    "default_profile": "en-us-guy",
+
+    "profiles": {
+
+        "en-us-guy": {
+
+            "name": "English US - Guy",
+
+            "description": "Default English male narrator.",
+
+            "provider": "edge",
+
+            "language": "en",
+
+            "locale": "en-US",
+
+            "voice": "en-US-GuyNeural",
+
+            "rate": "-15%",
+
+            "pitch": "+0Hz",
+
+            "volume": "+0%",
+
+            "style": "default",
+
+            "role": "narrator",
+
+            "gender": "male"
+        },
+
+        "en-us-jenny": {
+
+            "name": "English US - Jenny",
+
+            "description": "English female presenter.",
+
+            "provider": "edge",
+
+            "language": "en",
+
+            "locale": "en-US",
+
+            "voice": "en-US-JennyNeural",
+
+            "rate": "-10%",
+
+            "pitch": "+0Hz",
+
+            "volume": "+0%",
+
+            "style": "friendly",
+
+            "role": "presenter",
+
+            "gender": "female"
+        },
+
+        "pt-br-francisca": {
+
+            "name": "Português Brasil - Francisca",
+
+            "description": "Narradora brasileira.",
+
+            "provider": "edge",
+
+            "language": "pt",
+
+            "locale": "pt-BR",
+
+            "voice": "pt-BR-FranciscaNeural",
+
+            "rate": "-8%",
+
+            "pitch": "+0Hz",
+
+            "volume": "+0%",
+
+            "style": "default",
+
+            "role": "narrator",
+
+            "gender": "female"
+        },
+
+        "pt-br-antonio": {
+
+            "name": "Português Brasil - Antonio",
+
+            "description": "Narrador brasileiro.",
+
+            "provider": "edge",
+
+            "language": "pt",
+
+            "locale": "pt-BR",
+
+            "voice": "pt-BR-AntonioNeural",
+
+            "rate": "-8%",
+
+            "pitch": "+0Hz",
+
+            "volume": "+0%",
+
+            "style": "default",
+
+            "role": "narrator",
+
+            "gender": "male"
+        }
+
+    }
+}

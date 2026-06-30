@@ -24,7 +24,7 @@ from config.config_manager import ConfigManager
 from pipeline.text_analyzer import TextAnalyzer
 from pipeline.narration_builder import NarrationBuilder
 from pipeline.speech_builder import SpeechBuilder
-from services.tts_engine import TTSEngine
+from services.speech_service import SpeechService
 
 
 class SpeechAIApp:
@@ -130,10 +130,10 @@ class SpeechAIApp:
         speech.export(str(speech_file))
 
         # ==========================================================
-        # TTS Engine
+        # Speech Service
         # ==========================================================
 
-        tts = TTSEngine(self.cfg)
+        speech_service = SpeechService(self.cfg)
 
         audio_file = (
             self.project_root
@@ -141,12 +141,11 @@ class SpeechAIApp:
             / self.cfg.output_filename
         )
 
-        tts.generate(
-            narration_path=str(speech_file),
-            output_path=str(audio_file)
+        speech_service.synthesize(
+            narration_file=speech_file,
+            output_file=audio_file
         )
-
-        # ==========================================================
+                # ==========================================================
 
         print()
         print("=" * 50)
