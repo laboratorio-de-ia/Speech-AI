@@ -1118,3 +1118,123 @@
 2026-07-01 17:20:50,969 | INFO | TTS finished successfully.
 2026-07-01 17:20:50,969 | INFO | Speech synthesis completed successfully.
 2026-07-01 17:20:50,970 | INFO | Pipeline finished
+2026-07-01 17:26:34,673 | INFO | Pipeline started
+2026-07-01 17:26:34,673 | INFO | Starting Text Analyzer
+2026-07-01 17:26:34,673 | INFO | Loading script...
+2026-07-01 17:26:34,674 | INFO | Normalizing text...
+2026-07-01 17:26:34,674 | INFO | Building Presentation...
+2026-07-01 17:26:34,674 | INFO | Detecting slides...
+2026-07-01 17:26:34,675 | INFO | Calculating statistics...
+2026-07-01 17:26:34,675 | INFO | Text Analyzer completed
+2026-07-01 17:26:34,675 | INFO | Building narration...
+2026-07-01 17:26:34,675 | INFO | 3 narration blocks generated.
+2026-07-01 17:26:34,676 | INFO | Narration exported to D:\Projetos\SpeechAI\output\narration.txt
+2026-07-01 17:26:34,676 | INFO | Building speech text...
+2026-07-01 17:26:34,677 | INFO | Speech text generated.
+2026-07-01 17:26:34,677 | INFO | Speech text exported to D:\Projetos\SpeechAI\output\speech.txt
+2026-07-01 17:26:34,677 | INFO | ============================================================
+2026-07-01 17:26:34,677 | INFO | Speech Service
+2026-07-01 17:26:34,677 | INFO | ============================================================
+2026-07-01 17:26:34,678 | INFO | Loading narration...
+2026-07-01 17:26:34,680 | INFO | Characters loaded: 1728
+2026-07-01 17:26:34,680 | INFO | Detecting language...
+2026-07-01 17:26:35,090 | INFO | Language detected: Portuguese (100.00%)
+2026-07-01 17:26:35,090 | INFO | Detected language: pt
+2026-07-01 17:26:35,090 | INFO | Voice selected: pt-BR-FranciscaNeural
+2026-07-01 17:26:35,090 | INFO | ============================================================
+2026-07-01 17:26:35,090 | INFO | VOICE PROFILE
+2026-07-01 17:26:35,091 | INFO | ============================================================
+2026-07-01 17:26:35,091 | INFO | Profile....: pt-br-francisca
+2026-07-01 17:26:35,091 | INFO | Name.......: Português Brasil - Francisca
+2026-07-01 17:26:35,091 | INFO | Provider...: edge
+2026-07-01 17:26:35,091 | INFO | Language...: pt
+2026-07-01 17:26:35,091 | INFO | Locale.....: pt-BR
+2026-07-01 17:26:35,091 | INFO | Voice......: pt-BR-FranciscaNeural
+2026-07-01 17:26:35,091 | INFO | Rate.......: -8%
+2026-07-01 17:26:35,091 | INFO | Pitch......: +0Hz
+2026-07-01 17:26:35,091 | INFO | Volume.....: +0%
+2026-07-01 17:26:35,091 | INFO | ============================================================
+2026-07-01 17:26:35,091 | INFO | Creating provider from VoiceProfile: edge
+2026-07-01 17:26:35,091 | INFO | Provider initialized: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-01 17:26:35,091 | INFO | Voice........: pt-BR-FranciscaNeural
+2026-07-01 17:26:35,091 | INFO | Language.....: pt
+2026-07-01 17:26:35,091 | INFO | Locale.......: pt-BR
+2026-07-01 17:26:35,091 | INFO | Provider created successfully.
+2026-07-01 17:26:35,091 | INFO | Provider instantiated: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-01 17:26:35,091 | INFO | TTS Engine initialized with provider: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-01 17:26:35,091 | INFO | Generating audio...
+2026-07-01 17:26:35,091 | INFO | ============================================================
+2026-07-01 17:26:35,092 | INFO | TTS Engine
+2026-07-01 17:26:35,092 | INFO | ============================================================
+2026-07-01 17:26:35,092 | INFO | Provider.....: EdgeProvider
+2026-07-01 17:26:35,092 | INFO | Characters...: 1728
+2026-07-01 17:26:35,092 | INFO | Output.......: D:\Projetos\SpeechAI\output\Audio_Governance_SouthAmerica.mp3
+2026-07-01 17:26:35,093 | INFO | Generating audio...
+2026-07-01 17:26:35,094 | INFO | Voice.....: pt-BR-FranciscaNeural
+2026-07-01 17:26:35,094 | INFO | Rate......: -8%
+2026-07-01 17:26:35,094 | INFO | Pitch.....: +0Hz
+2026-07-01 17:26:35,094 | INFO | Volume....: +0%
+2026-07-01 17:26:37,810 | INFO | Audio generated successfully.
+2026-07-01 17:26:37,813 | INFO | TTS finished successfully.
+2026-07-01 17:26:37,813 | INFO | Speech synthesis completed successfully.
+2026-07-01 17:26:37,814 | INFO | Pipeline finished
+2026-07-01 17:27:20,633 | INFO | Pipeline started
+2026-07-01 17:27:20,633 | INFO | Starting Text Analyzer
+2026-07-01 17:27:20,633 | INFO | Loading script...
+2026-07-01 17:27:20,634 | INFO | Normalizing text...
+2026-07-01 17:27:20,634 | INFO | Building Presentation...
+2026-07-01 17:27:20,634 | INFO | Detecting slides...
+2026-07-01 17:27:20,635 | INFO | Calculating statistics...
+2026-07-01 17:27:20,635 | INFO | Text Analyzer completed
+2026-07-01 17:27:20,635 | INFO | Building narration...
+2026-07-01 17:27:20,635 | INFO | 3 narration blocks generated.
+2026-07-01 17:27:20,636 | INFO | Narration exported to D:\Projetos\SpeechAI\output\narration.txt
+2026-07-01 17:27:20,636 | INFO | Building speech text...
+2026-07-01 17:27:20,636 | INFO | Speech text generated.
+2026-07-01 17:27:20,637 | INFO | Speech text exported to D:\Projetos\SpeechAI\output\speech.txt
+2026-07-01 17:27:20,637 | INFO | ============================================================
+2026-07-01 17:27:20,637 | INFO | Speech Service
+2026-07-01 17:27:20,637 | INFO | ============================================================
+2026-07-01 17:27:20,637 | INFO | Loading narration...
+2026-07-01 17:27:20,640 | INFO | Characters loaded: 1728
+2026-07-01 17:27:20,640 | INFO | Detecting language...
+2026-07-01 17:27:21,067 | INFO | Language detected: Portuguese (100.00%)
+2026-07-01 17:27:21,067 | INFO | Detected language: pt
+2026-07-01 17:27:21,067 | INFO | Voice selected: pt-BR-FranciscaNeural
+2026-07-01 17:27:21,067 | INFO | ============================================================
+2026-07-01 17:27:21,068 | INFO | VOICE PROFILE
+2026-07-01 17:27:21,068 | INFO | ============================================================
+2026-07-01 17:27:21,068 | INFO | Profile....: pt-br-francisca
+2026-07-01 17:27:21,068 | INFO | Name.......: Português Brasil - Francisca
+2026-07-01 17:27:21,068 | INFO | Provider...: edge
+2026-07-01 17:27:21,068 | INFO | Language...: pt
+2026-07-01 17:27:21,068 | INFO | Locale.....: pt-BR
+2026-07-01 17:27:21,068 | INFO | Voice......: pt-BR-FranciscaNeural
+2026-07-01 17:27:21,068 | INFO | Rate.......: -8%
+2026-07-01 17:27:21,068 | INFO | Pitch......: +0Hz
+2026-07-01 17:27:21,068 | INFO | Volume.....: +0%
+2026-07-01 17:27:21,068 | INFO | ============================================================
+2026-07-01 17:27:21,068 | INFO | Creating provider from VoiceProfile: edge
+2026-07-01 17:27:21,068 | INFO | Provider initialized: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-01 17:27:21,068 | INFO | Voice........: pt-BR-FranciscaNeural
+2026-07-01 17:27:21,068 | INFO | Language.....: pt
+2026-07-01 17:27:21,068 | INFO | Locale.......: pt-BR
+2026-07-01 17:27:21,068 | INFO | Provider created successfully.
+2026-07-01 17:27:21,068 | INFO | Provider instantiated: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-01 17:27:21,069 | INFO | TTS Engine initialized with provider: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-01 17:27:21,069 | INFO | Generating audio...
+2026-07-01 17:27:21,069 | INFO | ============================================================
+2026-07-01 17:27:21,069 | INFO | TTS Engine
+2026-07-01 17:27:21,069 | INFO | ============================================================
+2026-07-01 17:27:21,069 | INFO | Provider.....: EdgeProvider
+2026-07-01 17:27:21,069 | INFO | Characters...: 1728
+2026-07-01 17:27:21,069 | INFO | Output.......: D:\Projetos\SpeechAI\output\Audio_Governance_SouthAmerica.mp3
+2026-07-01 17:27:21,070 | INFO | Generating audio...
+2026-07-01 17:27:21,071 | INFO | Voice.....: pt-BR-FranciscaNeural
+2026-07-01 17:27:21,071 | INFO | Rate......: -8%
+2026-07-01 17:27:21,071 | INFO | Pitch.....: +0Hz
+2026-07-01 17:27:21,071 | INFO | Volume....: +0%
+2026-07-01 17:27:22,977 | INFO | Audio generated successfully.
+2026-07-01 17:27:22,979 | INFO | TTS finished successfully.
+2026-07-01 17:27:22,980 | INFO | Speech synthesis completed successfully.
+2026-07-01 17:27:22,981 | INFO | Pipeline finished
