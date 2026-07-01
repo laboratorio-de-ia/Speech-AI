@@ -100,3 +100,30 @@ VoiceSelector
 SpeechService
       ▼
 TTS
+
+
+                script.txt
+                     │
+                     ▼
+             Text Analyzer
+                     │
+                     ▼
+          Language Detector
+                     │
+                     ▼
+           Voice Selector
+                     │
+                     ▼
+      Speech Intelligence Engine
+                     │
+        ┌────────────┼────────────┐
+        ▼            ▼            ▼
+Speech Optimizer  Timing      Voice Optimizer
+        │            │            │
+        └────────────┼────────────┘
+                     ▼
+             Speech Profile
+                     ▼
+              Speech Service
+                     ▼
+                 TTS Engine

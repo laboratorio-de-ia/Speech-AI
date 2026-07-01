@@ -1298,3 +1298,63 @@
 2026-07-01 17:34:19,493 | INFO | TTS finished successfully.
 2026-07-01 17:34:19,493 | INFO | Speech synthesis completed successfully.
 2026-07-01 17:34:19,495 | INFO | Pipeline finished
+2026-07-01 18:08:12,653 | INFO | Pipeline started
+2026-07-01 18:08:12,653 | INFO | Starting Text Analyzer
+2026-07-01 18:08:12,653 | INFO | Loading script...
+2026-07-01 18:08:12,653 | INFO | Normalizing text...
+2026-07-01 18:08:12,654 | INFO | Building Presentation...
+2026-07-01 18:08:12,654 | INFO | Detecting slides...
+2026-07-01 18:08:12,654 | INFO | Calculating statistics...
+2026-07-01 18:08:12,655 | INFO | Text Analyzer completed
+2026-07-01 18:08:12,655 | INFO | Building narration...
+2026-07-01 18:08:12,655 | INFO | 6 narration blocks generated.
+2026-07-01 18:08:12,656 | INFO | Narration exported to D:\Projetos\SpeechAI\output\narration.txt
+2026-07-01 18:08:12,656 | INFO | Building speech text...
+2026-07-01 18:08:12,657 | INFO | Speech text generated.
+2026-07-01 18:08:12,658 | INFO | Speech text exported to D:\Projetos\SpeechAI\output\speech.txt
+2026-07-01 18:08:12,658 | INFO | ============================================================
+2026-07-01 18:08:12,658 | INFO | Speech Service
+2026-07-01 18:08:12,658 | INFO | ============================================================
+2026-07-01 18:08:12,658 | INFO | Loading narration...
+2026-07-01 18:08:12,660 | INFO | Characters loaded: 7349
+2026-07-01 18:08:12,660 | INFO | Detecting language...
+2026-07-01 18:08:12,982 | INFO | Language detected: English (100.00%)
+2026-07-01 18:08:12,982 | INFO | Detected language: en
+2026-07-01 18:08:12,982 | INFO | Voice selected: en-US-GuyNeural
+2026-07-01 18:08:12,982 | INFO | ============================================================
+2026-07-01 18:08:12,982 | INFO | VOICE PROFILE
+2026-07-01 18:08:12,982 | INFO | ============================================================
+2026-07-01 18:08:12,982 | INFO | Profile....: en-us-guy
+2026-07-01 18:08:12,982 | INFO | Name.......: English US - Guy
+2026-07-01 18:08:12,982 | INFO | Provider...: edge
+2026-07-01 18:08:12,982 | INFO | Language...: en
+2026-07-01 18:08:12,982 | INFO | Locale.....: en-US
+2026-07-01 18:08:12,982 | INFO | Voice......: en-US-GuyNeural
+2026-07-01 18:08:12,983 | INFO | Rate.......: -15%
+2026-07-01 18:08:12,983 | INFO | Pitch......: +0Hz
+2026-07-01 18:08:12,983 | INFO | Volume.....: +0%
+2026-07-01 18:08:12,983 | INFO | ============================================================
+2026-07-01 18:08:12,983 | INFO | Creating provider from VoiceProfile: edge
+2026-07-01 18:08:12,983 | INFO | Provider initialized: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-01 18:08:12,983 | INFO | Voice........: en-US-GuyNeural
+2026-07-01 18:08:12,983 | INFO | Language.....: en
+2026-07-01 18:08:12,983 | INFO | Locale.......: en-US
+2026-07-01 18:08:12,983 | INFO | Provider created successfully.
+2026-07-01 18:08:12,983 | INFO | Provider instantiated: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-01 18:08:12,983 | INFO | TTS Engine initialized with provider: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-01 18:08:12,983 | INFO | Generating audio...
+2026-07-01 18:08:12,983 | INFO | ============================================================
+2026-07-01 18:08:12,983 | INFO | TTS Engine
+2026-07-01 18:08:12,983 | INFO | ============================================================
+2026-07-01 18:08:12,983 | INFO | Provider.....: EdgeProvider
+2026-07-01 18:08:12,983 | INFO | Characters...: 7349
+2026-07-01 18:08:12,983 | INFO | Output.......: D:\Projetos\SpeechAI\output\Audio_Governance_SouthAmerica.mp3
+2026-07-01 18:08:12,986 | INFO | Generating audio...
+2026-07-01 18:08:12,986 | INFO | Voice.....: en-US-GuyNeural
+2026-07-01 18:08:12,986 | INFO | Rate......: -15%
+2026-07-01 18:08:12,986 | INFO | Pitch.....: +0Hz
+2026-07-01 18:08:12,986 | INFO | Volume....: +0%
+2026-07-01 18:08:19,659 | INFO | Audio generated successfully.
+2026-07-01 18:08:19,661 | INFO | TTS finished successfully.
+2026-07-01 18:08:19,661 | INFO | Speech synthesis completed successfully.
+2026-07-01 18:08:19,662 | INFO | Pipeline finished

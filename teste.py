@@ -1,9 +1,22 @@
+from config.config_manager import ConfigManager
+
+from pipeline.text_analyzer import TextAnalyzer
+
 from services.language_detector import LanguageDetector
 
-detector = LanguageDetector()
+from services.speech_analyzer import SpeechAnalyzer
 
-language = detector.detect_file(
-    "input/script.txt"
+cfg = ConfigManager()
+
+presentation = TextAnalyzer(cfg).run()
+
+language = LanguageDetector().detect(
+    presentation.to_text()
 )
 
-print(language)
+analysis = SpeechAnalyzer().analyze(
+    presentation,
+    language
+)
+
+print(analysis)
