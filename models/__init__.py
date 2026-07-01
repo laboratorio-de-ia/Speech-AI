@@ -1,17 +1,27 @@
 """
-Models package for Speech AI
+=========================================================
+Speech AI Models
+
+Exporta todos os Domain Models da plataforma.
+
+Author: Rodrigo Magalhães
+=========================================================
 """
 
+from .language import Language
+from .list_block import ListBlock
+from .paragraph import Paragraph
 from .presentation import Presentation
 from .slide import Slide
-from .paragraph import Paragraph
-from .list_block import ListBlock
-from .statistics import SpeechStatistics
+from .statistics import Statistics
+from .voice_profile import VoiceProfile
 
 __all__ = [
+    "Language",
+    "ListBlock",
+    "Paragraph",
     "Presentation",
     "Slide",
-    "Paragraph",
-    "ListBlock",
-    "SpeechStatistics",
+    "Statistics",
+    "VoiceProfile",
 ]

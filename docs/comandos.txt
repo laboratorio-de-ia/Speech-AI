@@ -1,0 +1,64 @@
+Teste 1 – Importação
+
+Execute:
+
+python -c "from services.voice_manager import VoiceManager; print('VoiceManager OK')"
+
+Esperado:
+
+VoiceManager OK
+Teste 2 – Carregamento do catálogo
+
+Execute:
+
+python -c "from services.voice_manager import VoiceManager; vm=VoiceManager('config/voices.json'); print(vm.statistics)"
+
+Esperado:
+
+{
+    'profiles': 4,
+    'languages': 2,
+    'providers': 1
+}
+Teste 3 – Listar perfis
+python -c "from services.voice_manager import VoiceManager; vm=VoiceManager('config/voices.json'); print(vm.list())"
+
+Esperado:
+
+Uma lista contendo os quatro VoiceProfile.
+
+Teste 4 – Buscar um perfil
+python -c "from services.voice_manager import VoiceManager; vm=VoiceManager('config/voices.json'); print(vm.get('en-us-guy'))"
+
+Esperado:
+
+English US - Guy (en-US-GuyNeural) [edge]
+Teste 5 – Idiomas disponíveis
+python -c "from services.voice_manager import VoiceManager; vm=VoiceManager('config/voices.json'); print(vm.list_languages())"
+
+Esperado:
+
+['en', 'pt']
+Teste 6 – Providers
+python -c "from services.voice_manager import VoiceManager; vm=VoiceManager('config/voices.json'); print(vm.list_providers())"
+
+Esperado:
+
+['edge']
+Teste 7 – Voz padrão por idioma
+Inglês
+python -c "from services.voice_manager import VoiceManager; vm=VoiceManager('config/voices.json'); print(vm.get_default_by_language('en'))"
+Português
+python -c "from services.voice_manager import VoiceManager; vm=VoiceManager('config/voices.json'); print(vm.get_default_by_language('pt'))"
+
+Esperado:
+
+English US - Guy (en-US-GuyNeural) [edge]
+
+Português Brasil - Francisca (pt-BR-FranciscaNeural) [edge]
+Teste 8 – Pesquisa
+python -c "from services.voice_manager import VoiceManager; vm=VoiceManager('config/voices.json'); print(vm.search('guy'))"
+
+Esperado:
+
+Uma lista contendo apenas o perfil Guy.

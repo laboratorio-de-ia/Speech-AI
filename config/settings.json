@@ -2,13 +2,10 @@
     "input": {
         "script_file": "input/script.txt"
     },
+
     "tts": {
         "provider": "edge",
-        "language": "en-US",
-        "voice": "en-US-GuyNeural",
-        "rate": "-15%",
-        "volume": "+0%",
-        "pitch": "+0Hz"
+        "voice_profile": "en-us-guy"
     },
 
     "output": {

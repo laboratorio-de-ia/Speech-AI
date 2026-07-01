@@ -4,71 +4,130 @@ Speech Service
 ---------------------------------------------------------
 Speech AI Platform
 
-Camada de serviço responsável pela geração de áudio.
+Responsável pela síntese de voz.
 
-Responsabilidades
+Fluxo:
 
-- carregar o texto
-- preparar diretórios
-- criar o Provider
-- instanciar o TTSEngine
-- retornar o áudio gerado
+Text
+    ↓
+Voice Selector
+    ↓
+Voice Profile
+    ↓
+TTS Engine
+    ↓
+Audio
 
 Author: Rodrigo Magalhães
 =========================================================
 """
 
+from __future__ import annotations
+
+import logging
 from pathlib import Path
 
 from config.config_manager import ConfigManager
 
-from providers.provider_factory import ProviderFactory
-
+from services.voice_selector import VoiceSelector
 from services.tts_engine import TTSEngine
+
+logger = logging.getLogger(__name__)
 
 
 class SpeechService:
-    """
-    Serviço responsável pela geração de áudio.
-    """
 
     # -------------------------------------------------
 
-    def __init__(self, cfg: ConfigManager):
+    def __init__(
+        self,
+        cfg: ConfigManager
+    ):
 
         self.cfg = cfg
 
-        provider = ProviderFactory.create(cfg)
+        self.voice_selector = VoiceSelector(cfg)
 
-        self.engine = TTSEngine(provider)
+        self.tts = TTSEngine(cfg)
 
     # -------------------------------------------------
 
     def synthesize(
+
         self,
+
         narration_file: Path,
+
         output_file: Path
+
     ) -> Path:
-        """
-        Gera o áudio final.
-        """
+
+        logger.info("=" * 60)
+        logger.info("Speech Service")
+        logger.info("=" * 60)
+
+        narration_file = Path(narration_file)
 
         if not narration_file.exists():
 
             raise FileNotFoundError(
+
                 f"Narration file not found:\n{narration_file}"
+
             )
 
-        output_file.parent.mkdir(
-            parents=True,
-            exist_ok=True
-        )
+        logger.info("Loading narration...")
 
         text = narration_file.read_text(
+
             encoding="utf-8"
+
         )
 
-        return self.engine.generate(
-            text=text,
-            output_path=output_file
+        # -------------------------------------------------
+        # Automatic Voice Selection
+        # -------------------------------------------------
+
+        profile = self.voice_selector.select(
+
+            text=text
+
         )
+
+        logger.info("=" * 60)
+        logger.info("VOICE PROFILE")
+        logger.info("=" * 60)
+        logger.info("Profile   : %s", profile.profile_id)
+        logger.info("Name      : %s", profile.name)
+        logger.info("Provider  : %s", profile.provider)
+        logger.info("Language  : %s", profile.language)
+        logger.info("Locale    : %s", profile.locale)
+        logger.info("Voice     : %s", profile.voice)
+        logger.info("Rate      : %s", profile.rate)
+        logger.info("Pitch     : %s", profile.pitch)
+        logger.info("Volume    : %s", profile.volume)
+        logger.info("=" * 60)
+
+        # -------------------------------------------------
+        # Update Runtime Configuration
+        # -------------------------------------------------
+
+        self.cfg.voice = profile.voice
+        self.cfg.language = profile.language
+        self.cfg.rate = profile.rate
+        self.cfg.pitch = profile.pitch
+        self.cfg.volume = profile.volume
+
+        logger.info("Generating audio...")
+
+        self.tts.generate(
+
+            text=text,
+
+            output_path=output_file
+
+        )
+
+        logger.info("Speech synthesis finished.")
+
+        return output_file

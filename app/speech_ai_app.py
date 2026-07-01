@@ -6,11 +6,11 @@ Application Kernel
 
 Responsável por:
 
+- Inicialização da aplicação
 - Configuração
-- Pipeline
-- Dependency Injection
 - Logging
-- Services
+- Execução da Pipeline
+- Orquestração dos Services
 
 Author: Rodrigo Magalhães
 =========================================================
@@ -21,9 +21,12 @@ from pathlib import Path
 
 from config.config_manager import ConfigManager
 
-from pipeline.text_analyzer import TextAnalyzer
-from pipeline.narration_builder import NarrationBuilder
-from pipeline.speech_builder import SpeechBuilder
+from pipeline import (
+    NarrationBuilder,
+    SpeechBuilder,
+    TextAnalyzer,
+)
+
 from services.speech_service import SpeechService
 
 
@@ -49,13 +52,20 @@ class SpeechAIApp:
 
         logs = self.project_root / "logs"
 
-        logs.mkdir(exist_ok=True)
+        logs.mkdir(
+            exist_ok=True
+        )
 
         logging.basicConfig(
+
             filename=logs / "app.log",
+
             level=logging.INFO,
+
             format="%(asctime)s | %(levelname)s | %(message)s",
+
             force=True
+
         )
 
     # -------------------------------------------------
@@ -63,10 +73,15 @@ class SpeechAIApp:
     def _show_banner(self):
 
         print()
+
         print("=" * 60)
+
         print(f" {self.cfg.project_name}")
+
         print("=" * 60)
+
         print(f"Version : {self.cfg.project_version}")
+
         print("=" * 60)
 
     # -------------------------------------------------
@@ -80,22 +95,24 @@ class SpeechAIApp:
     def run(self):
 
         print()
+
         print("Starting pipeline...")
+
         print()
 
         self.logger.info("Pipeline started")
 
-        # ==========================================================
-        # Text Analyzer
-        # ==========================================================
+        # =====================================================
+        # TEXT ANALYZER
+        # =====================================================
 
         analyzer = TextAnalyzer(self.cfg)
 
         presentation = analyzer.run()
 
-        # ==========================================================
-        # Narration Builder
-        # ==========================================================
+        # =====================================================
+        # NARRATION BUILDER
+        # =====================================================
 
         narrator = NarrationBuilder(self.cfg)
 
@@ -104,16 +121,24 @@ class SpeechAIApp:
         narrator.build()
 
         narration_file = (
+
             self.project_root
+
             / self.cfg.output_directory
+
             / "narration.txt"
+
         )
 
-        narrator.export_text(str(narration_file))
+        narrator.export_text(
 
-        # ==========================================================
-        # Speech Builder
-        # ==========================================================
+            str(narration_file)
+
+        )
+
+        # =====================================================
+        # SPEECH BUILDER
+        # =====================================================
 
         speech = SpeechBuilder(self.cfg)
 
@@ -122,46 +147,89 @@ class SpeechAIApp:
         speech.build()
 
         speech_file = (
+
             self.project_root
+
             / self.cfg.output_directory
+
             / "speech.txt"
+
         )
 
-        speech.export(str(speech_file))
+        speech.export(
 
-        # ==========================================================
-        # Speech Service
-        # ==========================================================
+            str(speech_file)
 
-        speech_service = SpeechService(self.cfg)
+        )
+
+        # =====================================================
+        # TTS SERVICE
+        # =====================================================
+
+        speech_service = SpeechService(
+
+            self.cfg
+
+        )
 
         audio_file = (
+
             self.project_root
+
             / self.cfg.output_directory
+
             / self.cfg.output_filename
+
         )
 
         speech_service.synthesize(
+
             narration_file=speech_file,
+
             output_file=audio_file
+
         )
-                # ==========================================================
+
+        # =====================================================
+        # SUMMARY
+        # =====================================================
 
         print()
-        print("=" * 50)
+
+        print("=" * 60)
+
         print(" Pipeline Finished")
-        print("=" * 50)
 
-        print(f"Slides............. {presentation.total_slides()}")
+        print("=" * 60)
+
+        print(f"Slides............. {presentation.total_slides}")
+
         print(f"Words.............. {presentation.statistics.words}")
+
         print(
-            f"Estimated Duration. {presentation.statistics.estimated_minutes} min"
+            f"Sentences.......... {presentation.statistics.sentences}"
+        )
+
+        print(
+            f"Paragraphs......... {presentation.statistics.paragraphs}"
+        )
+
+        print(
+            f"Characters......... {presentation.statistics.characters}"
+        )
+
+        print(
+            f"Estimated Duration. {presentation.statistics.estimated_minutes:.2f} min"
         )
 
         print()
+
         print(f"Narration.......... {narration_file}")
+
         print(f"Speech............. {speech_file}")
+
         print(f"Audio.............. {audio_file}")
+
         print()
 
         self.logger.info("Pipeline finished")

@@ -4,56 +4,87 @@ Voice Manager
 ---------------------------------------------------------
 Speech AI Platform
 
-Responsável por carregar e disponibilizar os perfis de voz
-configurados em voices.json.
-
-Esta classe é a única responsável por conhecer a estrutura
-do arquivo de configuração.
+Centraliza o gerenciamento dos perfis de voz
+disponíveis na plataforma.
 
 Author: Rodrigo Magalhães
 =========================================================
 """
 
+from __future__ import annotations
+
 import json
 from pathlib import Path
 
-from models.voice_profile import VoiceProfile
+from models import VoiceProfile
 
 
 class VoiceManager:
-    """
-    Gerencia os perfis de voz da aplicação.
-    """
 
     # -------------------------------------------------
 
-    def __init__(self, voices_file: Path):
+    def __init__(
+        self,
+        voices_file: str | Path
+    ):
 
         self.voices_file = Path(voices_file)
 
+        self._profiles: dict[str, VoiceProfile] = {}
+
+        self._defaults: dict[str, str] = {}
+
+        self.load()
+
+    # -------------------------------------------------
+
+    def load(self):
+
         if not self.voices_file.exists():
 
-            raise FileNotFoundError(
-                f"Voice configuration not found:\n{self.voices_file}"
-            )
+            raise FileNotFoundError(self.voices_file)
 
         with open(
             self.voices_file,
             "r",
             encoding="utf-8"
-        ) as file:
+        ) as f:
 
-            self._config = json.load(file)
+            data = json.load(f)
+
+        self._profiles.clear()
+
+        self._defaults = data.get(
+            "defaults",
+            {}
+        )
+
+        for profile_id, item in data["profiles"].items():
+
+            profile = VoiceProfile(
+
+                profile_id=profile_id,
+
+                **item
+
+            )
+
+            self._profiles[profile_id] = profile
 
     # -------------------------------------------------
 
-    @property
-    def default_profile(self) -> str:
-        """
-        Retorna o profile padrão.
-        """
+    def reload(self):
 
-        return self._config["default_profile"]
+        self.load()
+
+    # -------------------------------------------------
+
+    def get(
+        self,
+        profile_id: str
+    ) -> VoiceProfile:
+
+        return self._profiles[profile_id]
 
     # -------------------------------------------------
 
@@ -61,94 +92,161 @@ class VoiceManager:
         self,
         profile_id: str
     ) -> bool:
-        """
-        Verifica se o perfil existe.
-        """
 
-        return profile_id in self._config["profiles"]
+        return profile_id in self._profiles
 
     # -------------------------------------------------
 
-    def list_profiles(self) -> list[str]:
-        """
-        Lista todos os perfis disponíveis.
-        """
+    def list(self):
 
-        return sorted(
-            self._config["profiles"].keys()
+        return list(
+            self._profiles.values()
         )
 
     # -------------------------------------------------
 
-    def get(
+    def list_languages(self):
+
+        return sorted({
+
+            profile.language
+
+            for profile in self._profiles.values()
+
+        })
+
+    # -------------------------------------------------
+
+    def list_providers(self):
+
+        return sorted({
+
+            profile.provider
+
+            for profile in self._profiles.values()
+
+        })
+
+    # -------------------------------------------------
+
+    def get_default_by_language(
+
         self,
-        profile_id: str | None = None
-    ) -> VoiceProfile:
-        """
-        Retorna um VoiceProfile.
-        """
+
+        language: str,
+
+        provider: str | None = None
+
+    ) -> VoiceProfile | None:
+
+        profile_id = self._defaults.get(language)
 
         if profile_id is None:
 
-            profile_id = self.default_profile
+            return None
 
-        if not self.exists(profile_id):
+        profile = self._profiles.get(profile_id)
 
-            raise ValueError(
-                f"Voice profile '{profile_id}' not found."
-            )
+        if profile is None:
 
-        profile = self._config["profiles"][profile_id]
+            return None
 
-        return VoiceProfile(
+        if provider is not None:
 
-            profile_id=profile_id,
+            if profile.provider != provider:
 
-            name=profile["name"],
+                return None
 
-            description=profile["description"],
-
-            language=profile["language"],
-
-            locale=profile["locale"],
-
-            voice=profile["voice"],
-
-            rate=profile["rate"],
-
-            pitch=profile["pitch"],
-
-            volume=profile["volume"],
-
-            style=profile.get(
-                "style",
-                "default"
-            ),
-
-            role=profile.get(
-                "role",
-                "default"
-            ),
-
-            gender=profile.get(
-                "gender",
-                "neutral"
-            ),
-
-            provider=profile.get(
-                "provider",
-                "edge"
-            )
-
-        )
+        return profile
 
     # -------------------------------------------------
 
-    def __len__(self) -> int:
-        """
-        Quantidade de perfis cadastrados.
-        """
+    def get_by_provider(
 
-        return len(
-            self._config["profiles"]
-        )
+        self,
+
+        provider: str
+
+    ):
+
+        return [
+
+            profile
+
+            for profile in self._profiles.values()
+
+            if profile.provider == provider
+
+        ]
+
+    # -------------------------------------------------
+
+    def get_by_voice(
+
+        self,
+
+        voice: str
+
+    ) -> VoiceProfile | None:
+
+        for profile in self._profiles.values():
+
+            if profile.voice == voice:
+
+                return profile
+
+        return None
+
+    # -------------------------------------------------
+
+    def search(
+
+        self,
+
+        text: str
+
+    ):
+
+        text = text.lower()
+
+        return [
+
+            profile
+
+            for profile in self._profiles.values()
+
+            if (
+                text in profile.name.lower()
+                or text in profile.voice.lower()
+                or text in profile.language.lower()
+                or text in profile.locale.lower()
+            )
+
+        ]
+
+    # -------------------------------------------------
+
+    @property
+    def statistics(self):
+
+        return {
+
+            "profiles": len(self._profiles),
+
+            "languages": len(self.list_languages()),
+
+            "providers": len(self.list_providers())
+
+        }
+
+    # -------------------------------------------------
+
+    def __len__(self):
+
+        return len(self._profiles)
+
+    # -------------------------------------------------
+
+    def __iter__(self):
+
+        return iter(self._profiles.values())

@@ -1,31 +1,31 @@
 from dataclasses import dataclass, field
-from typing import List, Optional
 
 from .slide import Slide
-from .statistics import SpeechStatistics
+from .statistics import Statistics
 
 
-@dataclass
+@dataclass(slots=True)
 class Presentation:
     """
-    Representa toda a apresentação.
+    Representa uma apresentação completa.
     """
 
-    title: Optional[str] = None
+    title: str = ""
 
-    slides: List[Slide] = field(default_factory=list)
+    slides: list[Slide] = field(default_factory=list)
 
-    statistics: SpeechStatistics = field(
-        default_factory=SpeechStatistics
+    statistics: Statistics = field(
+        default_factory=Statistics
     )
 
-    def add_slide(self, slide: Slide):
+    def add_slide(
+        self,
+        slide: Slide
+    ):
+
         self.slides.append(slide)
 
-    def get_slide(self, index: int) -> Optional[Slide]:
-        if 0 <= index < len(self.slides):
-            return self.slides[index]
-        return None
+    @property
+    def total_slides(self):
 
-    def total_slides(self) -> int:
         return len(self.slides)

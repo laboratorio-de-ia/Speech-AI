@@ -1,13 +1,12 @@
 {
-    "default_profile": "en-us-guy",
+    "defaults": {
+        "en": "en-us-guy",
+        "pt": "pt-br-francisca"
+    },
 
     "profiles": {
 
         "en-us-guy": {
-
-            "name": "English US - Guy",
-
-            "description": "Default English male narrator.",
 
             "provider": "edge",
 
@@ -16,6 +15,10 @@
             "locale": "en-US",
 
             "voice": "en-US-GuyNeural",
+
+            "name": "English US - Guy",
+
+            "description": "Default English male narrator.",
 
             "rate": "-15%",
 
@@ -28,13 +31,10 @@
             "role": "narrator",
 
             "gender": "male"
+
         },
 
         "en-us-jenny": {
-
-            "name": "English US - Jenny",
-
-            "description": "English female presenter.",
 
             "provider": "edge",
 
@@ -43,6 +43,10 @@
             "locale": "en-US",
 
             "voice": "en-US-JennyNeural",
+
+            "name": "English US - Jenny",
+
+            "description": "English female presenter.",
 
             "rate": "-10%",
 
@@ -55,13 +59,10 @@
             "role": "presenter",
 
             "gender": "female"
+
         },
 
         "pt-br-francisca": {
-
-            "name": "Português Brasil - Francisca",
-
-            "description": "Narradora brasileira.",
 
             "provider": "edge",
 
@@ -70,6 +71,10 @@
             "locale": "pt-BR",
 
             "voice": "pt-BR-FranciscaNeural",
+
+            "name": "Português Brasil - Francisca",
+
+            "description": "Narradora brasileira.",
 
             "rate": "-8%",
 
@@ -82,13 +87,10 @@
             "role": "narrator",
 
             "gender": "female"
+
         },
 
         "pt-br-antonio": {
-
-            "name": "Português Brasil - Antonio",
-
-            "description": "Narrador brasileiro.",
 
             "provider": "edge",
 
@@ -97,6 +99,10 @@
             "locale": "pt-BR",
 
             "voice": "pt-BR-AntonioNeural",
+
+            "name": "Português Brasil - Antonio",
+
+            "description": "Narrador brasileiro.",
 
             "rate": "-8%",
 
@@ -109,6 +115,7 @@
             "role": "narrator",
 
             "gender": "male"
+
         }
 
     }

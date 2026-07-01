@@ -2,59 +2,60 @@
 =========================================================
 Text Analyzer - Speech AI
 ---------------------------------------------------------
-Sprint 6.4.1
+Sprint 8.5
 
-Responsável por transformar texto bruto em:
+Responsável por transformar o script bruto em um objeto
+Presentation contendo Slides, Paragraphs, ListBlocks e
+Statistics.
 
-script.txt -> Presentation
-
-Agora utilizando Dependency Injection.
+Author: Rodrigo Magalhães
 =========================================================
 """
 
 import logging
 import re
 from pathlib import Path
-from typing import List
 
 from config.config_manager import ConfigManager
 
-from models.presentation import Presentation
-from models.slide import Slide
-from models.statistics import SpeechStatistics
+from models import (
+    Presentation,
+    Slide,
+    Statistics,
+)
 
 logger = logging.getLogger(__name__)
 
 
 class TextAnalyzer:
 
+    # -------------------------------------------------
+
     def __init__(self, cfg: ConfigManager):
 
         self.cfg = cfg
 
-        self.raw_text: str = ""
+        self.raw_text = ""
 
         self.presentation = Presentation()
 
-    # -----------------------------------------------------
+    # -------------------------------------------------
 
     def load(self):
 
         logger.info("Loading script...")
 
-        script_file = Path(self.cfg.script_file)
+        script = Path(self.cfg.script_file)
 
-        if not script_file.exists():
+        if not script.exists():
 
-            raise FileNotFoundError(
-                f"Script not found:\n{script_file}"
-            )
+            raise FileNotFoundError(script)
 
-        self.raw_text = script_file.read_text(
+        self.raw_text = script.read_text(
             encoding="utf-8"
         )
 
-    # -----------------------------------------------------
+    # -------------------------------------------------
 
     def normalize(self):
 
@@ -70,38 +71,52 @@ class TextAnalyzer:
 
         self.raw_text = text.strip()
 
-    # -----------------------------------------------------
+    # -------------------------------------------------
 
-    def detect_slides(self) -> List[str]:
+    def detect_slides(self):
 
         logger.info("Detecting slides...")
 
-        slides_raw = re.split(
+        slides = re.split(
+
             r"(?i)(?=slide\s+\d+)",
-            self.raw_text,
+
+            self.raw_text
+
         )
 
         return [
+
             slide.strip()
-            for slide in slides_raw
+
+            for slide in slides
+
             if slide.strip()
+
         ]
 
-    # -----------------------------------------------------
+    # -------------------------------------------------
 
     def parse_slide(
-        self,
-        slide_text: str,
-        index: int
-    ):
 
-        lines = slide_text.split("\n")
+        self,
+
+        slide_text: str,
+
+        number: int
+
+    ) -> Slide:
+
+        lines = slide_text.splitlines()
 
         title = lines[0].strip()
 
         slide = Slide(
-            number=index,
+
+            number=number,
+
             title=title
+
         )
 
         for line in lines[1:]:
@@ -109,6 +124,7 @@ class TextAnalyzer:
             line = line.strip()
 
             if not line:
+
                 continue
 
             if re.match(r"^[-•*]", line):
@@ -121,70 +137,103 @@ class TextAnalyzer:
 
         return slide
 
-    # -----------------------------------------------------
+    # -------------------------------------------------
 
     def build_presentation(self):
 
-        logger.info("Building presentation...")
+        logger.info("Building Presentation...")
 
-        slides = self.detect_slides()
+        for number, slide_text in enumerate(
 
-        for index, slide_text in enumerate(slides, start=1):
+            self.detect_slides(),
 
-            slide = self.parse_slide(
-                slide_text,
-                index
+            start=1
+
+        ):
+
+            self.presentation.add_slide(
+
+                self.parse_slide(
+
+                    slide_text,
+
+                    number
+
+                )
+
             )
 
-            self.presentation.add_slide(slide)
-
-        return self.presentation
-
-    # -----------------------------------------------------
+    # -------------------------------------------------
 
     def calculate_statistics(self):
 
         logger.info("Calculating statistics...")
 
-        stats = SpeechStatistics()
+        stats = Statistics()
 
-        words = re.findall(
-            r"\b[\w'-]+\b",
-            self.raw_text
+        stats.characters = len(self.raw_text)
+
+        stats.words = len(
+
+            re.findall(
+
+                r"\b[\w'-]+\b",
+
+                self.raw_text
+
+            )
+
         )
-
-        sentences = re.split(
-            r"[.!?]+",
-            self.raw_text
-        )
-
-        paragraphs = self.raw_text.split("\n\n")
-
-        stats.words = len(words)
 
         stats.sentences = len(
-            [s for s in sentences if s.strip()]
+
+            [
+
+                s
+
+                for s in re.split(
+
+                    r"[.!?]+",
+
+                    self.raw_text
+
+                )
+
+                if s.strip()
+
+            ]
+
         )
 
         stats.paragraphs = len(
-            [p for p in paragraphs if p.strip()]
-        )
 
-        stats.characters = len(
-            self.raw_text
+            [
+
+                p
+
+                for p in self.raw_text.split("\n\n")
+
+                if p.strip()
+
+            ]
+
         )
 
         stats.estimated_minutes = round(
+
             stats.words /
+
             self.cfg.words_per_minute,
+
             2
+
         )
 
         self.presentation.statistics = stats
 
-    # -----------------------------------------------------
+    # -------------------------------------------------
 
-    def run(self):
+    def run(self) -> Presentation:
 
         logger.info("Starting Text Analyzer")
 

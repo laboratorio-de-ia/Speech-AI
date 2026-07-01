@@ -7,53 +7,39 @@ Speech AI Platform
 Representa um perfil completo de voz utilizado pelos
 Providers TTS.
 
-Esta classe encapsula todas as configurações necessárias
-para geração de áudio, permitindo que diferentes
-providers utilizem a mesma estrutura de configuração.
+Este objeto é compartilhado entre:
 
-A classe não possui lógica de negócio.
-
-Ela representa apenas um objeto de domínio.
+- VoiceManager
+- VoiceSelector
+- ProviderFactory
+- SpeechService
 
 Author: Rodrigo Magalhães
 =========================================================
 """
 
-from dataclasses import dataclass
+from dataclasses import dataclass, asdict
 
 
-@dataclass(slots=True, frozen=True)
+@dataclass(slots=True)
 class VoiceProfile:
     """
-    Representa um perfil de voz.
-
-    Um perfil agrupa todas as configurações necessárias
-    para sintetizar áudio utilizando um Provider TTS.
+    Perfil completo de voz.
     """
-
-    # -------------------------------------------------
-    # Identificação
-    # -------------------------------------------------
 
     profile_id: str
 
-    name: str
-
-    description: str
-
-    # -------------------------------------------------
-    # Idioma
-    # -------------------------------------------------
+    provider: str
 
     language: str
 
     locale: str
 
-    # -------------------------------------------------
-    # Configuração da voz
-    # -------------------------------------------------
-
     voice: str
+
+    name: str
+
+    description: str
 
     rate: str
 
@@ -61,56 +47,57 @@ class VoiceProfile:
 
     volume: str
 
-    # -------------------------------------------------
-    # Recursos avançados
-    # -------------------------------------------------
+    style: str
 
-    style: str = "default"
+    role: str
 
-    role: str = "default"
+    gender: str
 
-    gender: str = "neutral"
-
-    provider: str = "edge"
+    is_default: bool = False
 
     # -------------------------------------------------
 
     @property
-    def is_english(self) -> bool:
-        """
-        Retorna True caso seja um perfil em inglês.
-        """
+    def is_male(self) -> bool:
 
-        return self.language.lower().startswith("en")
+        return self.gender.lower() == "male"
+
+    # -------------------------------------------------
+
+    @property
+    def is_female(self) -> bool:
+
+        return self.gender.lower() == "female"
 
     # -------------------------------------------------
 
     @property
     def is_portuguese(self) -> bool:
-        """
-        Retorna True caso seja um perfil em português.
-        """
 
-        return self.language.lower().startswith("pt")
+        return self.language == "pt"
 
     # -------------------------------------------------
 
-    def to_dict(self) -> dict:
+    @property
+    def is_english(self) -> bool:
+
+        return self.language == "en"
+
+    # -------------------------------------------------
+
+    @property
+    def display_name(self) -> str:
+
+        return f"{self.name} ({self.voice})"
+
+    # -------------------------------------------------
+
+    def provider_config(self) -> dict:
         """
-        Serializa o perfil.
+        Configuração utilizada pelo ProviderFactory.
         """
 
         return {
-
-            "profile_id": self.profile_id,
-
-            "name": self.name,
-
-            "description": self.description,
-
-            "language": self.language,
-
-            "locale": self.locale,
 
             "voice": self.voice,
 
@@ -118,27 +105,21 @@ class VoiceProfile:
 
             "pitch": self.pitch,
 
-            "volume": self.volume,
-
-            "style": self.style,
-
-            "role": self.role,
-
-            "gender": self.gender,
-
-            "provider": self.provider
+            "volume": self.volume
 
         }
 
     # -------------------------------------------------
 
-    def __str__(self) -> str:
-        """
-        Representação amigável.
-        """
+    def to_dict(self) -> dict:
+
+        return asdict(self)
+
+    # -------------------------------------------------
+
+    def __str__(self):
 
         return (
-            f"{self.name} "
-            f"[{self.voice}] "
-            f"({self.language})"
+            f"{self.display_name} "
+            f"[{self.provider}]"
         )
