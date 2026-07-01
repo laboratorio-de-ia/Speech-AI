@@ -76,3 +76,27 @@ VoiceProfile
    │
    ▼
 SpeechService
+
+
+script.txt
+      │
+      ▼
+TextAnalyzer
+      │
+      ├── Estatísticas
+      │      ├── palavras
+      │      ├── caracteres
+      │      └── tempo estimado
+      │
+      ▼
+NarrationBuilder
+      ▼
+SpeechBuilder
+      ▼
+LanguageDetector
+      ▼
+VoiceSelector
+      ▼
+SpeechService
+      ▼
+TTS
