@@ -4,8 +4,16 @@ Voice Manager
 ---------------------------------------------------------
 Speech AI Platform
 
-Centraliza o gerenciamento dos perfis de voz
-disponíveis na plataforma.
+Centraliza o gerenciamento dos perfis de voz disponíveis
+na plataforma.
+
+Responsabilidades
+-----------------
+- Carregar perfis de voz
+- Fornecer consultas rápidas
+- Gerenciar perfis padrão
+- Disponibilizar estatísticas
+- Servir como repositório somente leitura
 
 Author: Rodrigo Magalhães
 =========================================================
@@ -14,19 +22,27 @@ Author: Rodrigo Magalhães
 from __future__ import annotations
 
 import json
+import logging
 from pathlib import Path
 
 from models import VoiceProfile
 
+logger = logging.getLogger(__name__)
+
 
 class VoiceManager:
+    """
+    Repositório central dos Voice Profiles.
+
+    Após carregado, opera como um repositório somente leitura.
+    """
 
     # -------------------------------------------------
 
     def __init__(
         self,
         voices_file: str | Path
-    ):
+    ) -> None:
 
         self.voices_file = Path(voices_file)
 
@@ -34,23 +50,46 @@ class VoiceManager:
 
         self._defaults: dict[str, str] = {}
 
-        self.load()
+        self._languages: list[str] = []
+
+        self._providers: list[str] = []
+
+        self._load()
 
     # -------------------------------------------------
 
-    def load(self):
+    def _load(self) -> None:
+        """
+        Carrega o arquivo voices.json.
+        """
+
+        logger.info(
+            "Loading Voice Profiles..."
+        )
 
         if not self.voices_file.exists():
 
-            raise FileNotFoundError(self.voices_file)
+            raise FileNotFoundError(
+                self.voices_file
+            )
 
-        with open(
-            self.voices_file,
-            "r",
-            encoding="utf-8"
-        ) as f:
+        try:
 
-            data = json.load(f)
+            with open(
+                self.voices_file,
+                "r",
+                encoding="utf-8"
+            ) as fp:
+
+                data = json.load(fp)
+
+        except Exception:
+
+            logger.exception(
+                "Failed loading Voice Profiles."
+            )
+
+            raise
 
         self._profiles.clear()
 
@@ -71,11 +110,42 @@ class VoiceManager:
 
             self._profiles[profile_id] = profile
 
+        self._languages = sorted({
+
+            profile.language
+
+            for profile in self._profiles.values()
+
+        })
+
+        self._providers = sorted({
+
+            profile.provider
+
+            for profile in self._profiles.values()
+
+        })
+
+        logger.info(
+
+            "Loaded %d Voice Profiles.",
+
+            len(self._profiles)
+
+        )
+
     # -------------------------------------------------
 
-    def reload(self):
+    def reload(self) -> None:
+        """
+        Recarrega os perfis de voz.
+        """
 
-        self.load()
+        logger.info(
+            "Reloading Voice Profiles..."
+        )
+
+        self._load()
 
     # -------------------------------------------------
 
@@ -83,6 +153,9 @@ class VoiceManager:
         self,
         profile_id: str
     ) -> VoiceProfile:
+        """
+        Retorna um VoiceProfile pelo ID.
+        """
 
         return self._profiles[profile_id]
 
@@ -92,12 +165,20 @@ class VoiceManager:
         self,
         profile_id: str
     ) -> bool:
+        """
+        Verifica se um perfil existe.
+        """
 
         return profile_id in self._profiles
 
     # -------------------------------------------------
 
-    def list(self):
+    def list(
+        self
+    ) -> list[VoiceProfile]:
+        """
+        Lista todos os perfis.
+        """
 
         return list(
             self._profiles.values()
@@ -105,55 +186,62 @@ class VoiceManager:
 
     # -------------------------------------------------
 
-    def list_languages(self):
+    def list_languages(
+        self
+    ) -> list[str]:
+        """
+        Lista os idiomas disponíveis.
+        """
 
-        return sorted({
-
-            profile.language
-
-            for profile in self._profiles.values()
-
-        })
+        return self._languages.copy()
 
     # -------------------------------------------------
 
-    def list_providers(self):
+    def list_providers(
+        self
+    ) -> list[str]:
+        """
+        Lista os providers disponíveis.
+        """
 
-        return sorted({
-
-            profile.provider
-
-            for profile in self._profiles.values()
-
-        })
+        return self._providers.copy()
 
     # -------------------------------------------------
 
     def get_default_by_language(
-
         self,
-
         language: str,
-
         provider: str | None = None
-
     ) -> VoiceProfile | None:
+        """
+        Retorna o VoiceProfile padrão para um idioma.
+        """
 
-        profile_id = self._defaults.get(language)
+        language = language.lower()
+
+        if provider:
+
+            provider = provider.lower()
+
+        profile_id = self._defaults.get(
+            language
+        )
 
         if profile_id is None:
 
             return None
 
-        profile = self._profiles.get(profile_id)
+        profile = self._profiles.get(
+            profile_id
+        )
 
         if profile is None:
 
             return None
 
-        if provider is not None:
+        if provider:
 
-            if profile.provider != provider:
+            if profile.provider.lower() != provider:
 
                 return None
 
@@ -162,12 +250,14 @@ class VoiceManager:
     # -------------------------------------------------
 
     def get_by_provider(
-
         self,
-
         provider: str
+    ) -> list[VoiceProfile]:
+        """
+        Lista perfis por provider.
+        """
 
-    ):
+        provider = provider.lower()
 
         return [
 
@@ -175,19 +265,19 @@ class VoiceManager:
 
             for profile in self._profiles.values()
 
-            if profile.provider == provider
+            if profile.provider.lower() == provider
 
         ]
 
     # -------------------------------------------------
 
     def get_by_voice(
-
         self,
-
         voice: str
-
     ) -> VoiceProfile | None:
+        """
+        Pesquisa pelo nome da voz.
+        """
 
         for profile in self._profiles.values():
 
@@ -200,12 +290,12 @@ class VoiceManager:
     # -------------------------------------------------
 
     def search(
-
         self,
-
         text: str
-
-    ):
+    ) -> list[VoiceProfile]:
+        """
+        Pesquisa livre.
+        """
 
         text = text.lower()
 
@@ -216,10 +306,15 @@ class VoiceManager:
             for profile in self._profiles.values()
 
             if (
+
                 text in profile.name.lower()
+
                 or text in profile.voice.lower()
+
                 or text in profile.language.lower()
+
                 or text in profile.locale.lower()
+
             )
 
         ]
@@ -227,26 +322,66 @@ class VoiceManager:
     # -------------------------------------------------
 
     @property
-    def statistics(self):
+    def statistics(
+        self
+    ) -> dict[str, int]:
+        """
+        Estatísticas do repositório.
+        """
 
         return {
 
-            "profiles": len(self._profiles),
+            "profiles": len(self),
 
-            "languages": len(self.list_languages()),
+            "languages": len(self._languages),
 
-            "providers": len(self.list_providers())
+            "providers": len(self._providers)
 
         }
 
     # -------------------------------------------------
 
-    def __len__(self):
+    def __contains__(
+        self,
+        profile_id: str
+    ) -> bool:
 
-        return len(self._profiles)
+        return profile_id in self._profiles
 
     # -------------------------------------------------
 
-    def __iter__(self):
+    def __len__(
+        self
+    ) -> int:
 
-        return iter(self._profiles.values())
+        return len(
+            self._profiles
+        )
+
+    # -------------------------------------------------
+
+    def __iter__(
+        self
+    ):
+
+        return iter(
+            self._profiles.values()
+        )
+
+    # -------------------------------------------------
+
+    def __repr__(
+        self
+    ) -> str:
+
+        return (
+
+            "VoiceManager("
+
+            f"profiles={len(self)}, "
+
+            f"languages={len(self._languages)}, "
+
+            f"providers={len(self._providers)})"
+
+        )
