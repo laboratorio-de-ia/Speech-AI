@@ -28,7 +28,7 @@ from pipeline import (
 )
 
 from services.speech_service import SpeechService
-
+from services.speech_intelligence import SpeechIntelligenceEngine
 
 class SpeechAIApp:
 
@@ -110,6 +110,36 @@ class SpeechAIApp:
 
         presentation = analyzer.run()
 
+        # ==========================================================
+        # Speech Intelligence
+        # ==========================================================
+
+        intelligence = SpeechIntelligenceEngine(self.cfg)
+
+        speech_profile = intelligence.build_profile(
+            presentation
+        )
+
+        print()
+        print("=" * 60)
+        print(" Speech Intelligence")
+        print("=" * 60)
+
+        print(f"Language........... {speech_profile.language}")
+        print(f"Voice.............. {speech_profile.voice}")
+        print(f"Reading Style...... {speech_profile.reading_style}")
+        print(f"Complexity......... {speech_profile.complexity}")
+        print(f"Pacing............ {speech_profile.pacing}")
+        print(f"Recommended WPM.... {speech_profile.recommended_wpm}")
+        print(f"Rate............... {speech_profile.rate}")
+        print(f"Pitch.............. {speech_profile.pitch}")
+        print(f"Confidence......... {speech_profile.confidence}")
+
+        print("=" * 60)
+        print()
+
+
+
         # =====================================================
         # NARRATION BUILDER
         # =====================================================
@@ -166,11 +196,7 @@ class SpeechAIApp:
         # TTS SERVICE
         # =====================================================
 
-        speech_service = SpeechService(
-
-            self.cfg
-
-        )
+        speech_service = SpeechService()
 
         audio_file = (
 
@@ -183,6 +209,8 @@ class SpeechAIApp:
         )
 
         speech_service.synthesize(
+
+            speech_profile=speech_profile,
 
             narration_file=speech_file,
 

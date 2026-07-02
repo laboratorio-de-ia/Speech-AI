@@ -4,14 +4,12 @@ Voice Selector
 ---------------------------------------------------------
 Speech AI Platform
 
-Seleciona automaticamente o VoiceProfile ideal a partir
-do texto recebido.
+Responsável apenas por selecionar o VoiceProfile
+mais adequado para um idioma já detectado.
 
 Fluxo:
 
-Text
-    ↓
-LanguageDetector
+Language
     ↓
 VoiceManager
     ↓
@@ -21,18 +19,23 @@ Author: Rodrigo Magalhães
 =========================================================
 """
 
+from __future__ import annotations
+
 import logging
 
 from config.config_manager import ConfigManager
 
+from models import Language
 from models import VoiceProfile
-
-from services.language_detector import LanguageDetector
 
 logger = logging.getLogger(__name__)
 
 
 class VoiceSelector:
+    """
+    Seleciona automaticamente um VoiceProfile
+    a partir de um objeto Language.
+    """
 
     # -------------------------------------------------
 
@@ -42,29 +45,17 @@ class VoiceSelector:
 
         self.voice_manager = cfg.voice_manager
 
-        self.detector = LanguageDetector()
-
     # -------------------------------------------------
 
     def select(
         self,
-        text: str
+        language: Language
     ) -> VoiceProfile:
 
-        # ---------------------------------------------
-        # Detect Language
-        # ---------------------------------------------
-
-        language = self.detector.detect(text)
-
         logger.info(
-            "Detected language: %s",
+            "Selecting voice for language: %s",
             language.code
         )
-
-        # ---------------------------------------------
-        # Select Voice
-        # ---------------------------------------------
 
         profile = self.voice_manager.get_default_by_language(
 
@@ -95,7 +86,7 @@ class VoiceSelector:
 
     def __call__(
         self,
-        text: str
+        language: Language
     ) -> VoiceProfile:
 
-        return self.select(text)
+        return self.select(language)

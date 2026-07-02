@@ -4,20 +4,14 @@ Speech Service
 ---------------------------------------------------------
 Speech AI Platform
 
-Responsável pela síntese de voz.
+Responsável exclusivamente pela síntese de voz.
 
-Fluxo:
+Fluxo
 
 Narration File
         │
         ▼
-Read Text
-        │
-        ▼
-Voice Selector
-        │
-        ▼
-Voice Profile
+SpeechProfile
         │
         ▼
 Provider Factory
@@ -37,12 +31,11 @@ from __future__ import annotations
 import logging
 from pathlib import Path
 
-from config.config_manager import ConfigManager
+from models.speech_profile import SpeechProfile
 
 from providers.provider_factory import ProviderFactory
 
 from services.tts_engine import TTSEngine
-from services.voice_selector import VoiceSelector
 
 logger = logging.getLogger(__name__)
 
@@ -51,21 +44,22 @@ class SpeechService:
 
     # -------------------------------------------------
 
-    def __init__(
-        self,
-        cfg: ConfigManager
-    ):
+    def __init__(self):
 
-        self.cfg = cfg
-
-        self.voice_selector = VoiceSelector(cfg)
+        pass
 
     # -------------------------------------------------
 
     def synthesize(
+
         self,
+
+        speech_profile: SpeechProfile,
+
         narration_file: Path,
+
         output_file: Path
+
     ) -> Path:
 
         logger.info("=" * 60)
@@ -77,70 +71,44 @@ class SpeechService:
         if not narration_file.exists():
 
             raise FileNotFoundError(
-                f"Narration file not found:\n{narration_file}"
-            )
 
-        logger.info("Loading narration...")
+                f"Narration file not found:\n{narration_file}"
+
+            )
 
         text = narration_file.read_text(
             encoding="utf-8"
         )
 
         logger.info(
-            "Characters loaded: %d",
+            "Characters: %d",
             len(text)
         )
 
         # =====================================================
-        # Automatic Voice Selection
+        # Provider
         # =====================================================
 
-        profile = self.voice_selector.select(
-            text=text
-        )
+        provider = ProviderFactory.create_from_speech_profile(
 
-        logger.info("=" * 60)
-        logger.info("VOICE PROFILE")
-        logger.info("=" * 60)
+            speech_profile
 
-        logger.info("Profile....: %s", profile.profile_id)
-        logger.info("Name.......: %s", profile.name)
-        logger.info("Provider...: %s", profile.provider)
-        logger.info("Language...: %s", profile.language)
-        logger.info("Locale.....: %s", profile.locale)
-        logger.info("Voice......: %s", profile.voice)
-        logger.info("Rate.......: %s", profile.rate)
-        logger.info("Pitch......: %s", profile.pitch)
-        logger.info("Volume.....: %s", profile.volume)
-
-        logger.info("=" * 60)
-
-        # =====================================================
-        # Provider Factory
-        # =====================================================
-
-        provider = ProviderFactory.create_from_profile(
-            profile
         )
 
         logger.info(
-            "Provider instantiated: %s",
+            "Provider: %s",
             provider
         )
 
         # =====================================================
-        # TTS Engine
+        # Engine
         # =====================================================
 
-        tts = TTSEngine(
+        engine = TTSEngine(
             provider
         )
 
-        logger.info(
-            "Generating audio..."
-        )
-
-        audio = tts.generate(
+        audio = engine.generate(
 
             text=text,
 
@@ -148,8 +116,6 @@ class SpeechService:
 
         )
 
-        logger.info(
-            "Speech synthesis completed successfully."
-        )
+        logger.info("Speech synthesis completed.")
 
         return audio
