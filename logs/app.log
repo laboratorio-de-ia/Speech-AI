@@ -2350,3 +2350,63 @@
 2026-07-02 17:40:54,995 | INFO | TTS finished successfully.
 2026-07-02 17:40:54,995 | INFO | Speech synthesis completed.
 2026-07-02 17:40:54,995 | INFO | Pipeline finished
+2026-07-02 18:13:59,104 | INFO | Pipeline started
+2026-07-02 18:13:59,104 | INFO | Starting Text Analyzer
+2026-07-02 18:13:59,104 | INFO | Loading script...
+2026-07-02 18:13:59,104 | INFO | Normalizing text...
+2026-07-02 18:13:59,104 | INFO | Building Presentation...
+2026-07-02 18:13:59,104 | INFO | Detecting slides...
+2026-07-02 18:13:59,104 | INFO | Calculating statistics...
+2026-07-02 18:13:59,104 | INFO | Text Analyzer completed
+2026-07-02 18:13:59,104 | INFO | ============================================================
+2026-07-02 18:13:59,104 | INFO | Speech Intelligence Engine
+2026-07-02 18:13:59,104 | INFO | ============================================================
+2026-07-02 18:13:59,104 | INFO | Detecting language...
+2026-07-02 18:13:59,313 | INFO | Language detected: English (100.00%)
+2026-07-02 18:13:59,313 | INFO | Language detected: en
+2026-07-02 18:13:59,313 | INFO | Selecting voice for language: en
+2026-07-02 18:13:59,313 | INFO | Voice selected: en-US-GuyNeural
+2026-07-02 18:13:59,313 | INFO | Running Speech Analyzer...
+2026-07-02 18:13:59,313 | INFO | Speech Analyzer completed.
+2026-07-02 18:13:59,314 | INFO | Calculating speech timing...
+2026-07-02 18:13:59,314 | INFO | Complexity..... Low
+2026-07-02 18:13:59,314 | INFO | Recommended WPM 150
+2026-07-02 18:13:59,314 | INFO | Recommended Rate -5%
+2026-07-02 18:13:59,314 | INFO | ============================================================
+2026-07-02 18:13:59,314 | INFO | Speech Optimizer
+2026-07-02 18:13:59,314 | INFO | ============================================================
+2026-07-02 18:13:59,314 | INFO | Voice........ en-US-GuyNeural
+2026-07-02 18:13:59,314 | INFO | Rate......... -5%
+2026-07-02 18:13:59,314 | INFO | Pitch........ +1Hz
+2026-07-02 18:13:59,314 | INFO | Reading...... Conversational
+2026-07-02 18:13:59,314 | INFO | Complexity... Low
+2026-07-02 18:13:59,314 | INFO | Confidence... 1.00
+2026-07-02 18:13:59,314 | INFO | Speech Profile generated successfully.
+2026-07-02 18:13:59,315 | INFO | Building narration...
+2026-07-02 18:13:59,315 | INFO | 1 narration blocks generated.
+2026-07-02 18:13:59,316 | INFO | Narration exported to D:\Laboratorio de IA\Speech-AI\output\narration.txt
+2026-07-02 18:13:59,317 | INFO | Building speech text...
+2026-07-02 18:13:59,317 | INFO | Speech text generated.
+2026-07-02 18:13:59,318 | INFO | Speech text exported to D:\Laboratorio de IA\Speech-AI\output\speech.txt
+2026-07-02 18:13:59,318 | INFO | ============================================================
+2026-07-02 18:13:59,318 | INFO | Speech Service
+2026-07-02 18:13:59,318 | INFO | ============================================================
+2026-07-02 18:13:59,319 | INFO | Characters: 6362
+2026-07-02 18:13:59,319 | INFO | Provider initialized: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-02 18:13:59,319 | INFO | Provider: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-02 18:13:59,319 | INFO | TTS Engine initialized with provider: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-02 18:13:59,319 | INFO | ============================================================
+2026-07-02 18:13:59,319 | INFO | TTS Engine
+2026-07-02 18:13:59,319 | INFO | ============================================================
+2026-07-02 18:13:59,319 | INFO | Provider.....: EdgeProvider
+2026-07-02 18:13:59,319 | INFO | Characters...: 6362
+2026-07-02 18:13:59,319 | INFO | Output.......: D:\Laboratorio de IA\Speech-AI\output\Audio_Governance_SouthAmerica.mp3
+2026-07-02 18:13:59,321 | INFO | Generating audio...
+2026-07-02 18:13:59,321 | INFO | Voice.....: en-US-GuyNeural
+2026-07-02 18:13:59,321 | INFO | Rate......: -5%
+2026-07-02 18:13:59,321 | INFO | Pitch.....: +1Hz
+2026-07-02 18:13:59,321 | INFO | Volume....: +0%
+2026-07-02 18:14:04,365 | INFO | Audio generated successfully.
+2026-07-02 18:14:04,365 | INFO | TTS finished successfully.
+2026-07-02 18:14:04,365 | INFO | Speech synthesis completed.
+2026-07-02 18:14:04,365 | INFO | Pipeline finished
