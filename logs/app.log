@@ -2068,3 +2068,285 @@
 2026-07-02 15:24:44,417 | INFO | TTS finished successfully.
 2026-07-02 15:24:44,417 | INFO | Speech synthesis completed.
 2026-07-02 15:24:44,417 | INFO | Pipeline finished
+2026-07-02 15:30:05,731 | INFO | Pipeline started
+2026-07-02 15:30:05,731 | INFO | Starting Text Analyzer
+2026-07-02 15:30:05,731 | INFO | Loading script...
+2026-07-02 15:30:05,731 | INFO | Normalizing text...
+2026-07-02 15:30:05,732 | INFO | Building Presentation...
+2026-07-02 15:30:05,732 | INFO | Detecting slides...
+2026-07-02 15:30:05,732 | INFO | Calculating statistics...
+2026-07-02 15:30:05,733 | INFO | Text Analyzer completed
+2026-07-02 15:30:05,733 | INFO | ============================================================
+2026-07-02 15:30:05,733 | INFO | Speech Intelligence Engine
+2026-07-02 15:30:05,733 | INFO | ============================================================
+2026-07-02 15:30:05,733 | INFO | Detecting language...
+2026-07-02 15:30:05,922 | INFO | Language detected: English (100.00%)
+2026-07-02 15:30:05,922 | INFO | Language detected: en
+2026-07-02 15:30:05,922 | INFO | Selecting voice for language: en
+2026-07-02 15:30:05,922 | INFO | Voice selected: en-US-GuyNeural
+2026-07-02 15:30:05,922 | INFO | Running Speech Analyzer...
+2026-07-02 15:30:05,922 | INFO | Speech Analyzer completed.
+2026-07-02 15:30:05,922 | INFO | Calculating speech timing...
+2026-07-02 15:30:05,922 | INFO | Complexity..... Low
+2026-07-02 15:30:05,922 | INFO | Recommended WPM 150
+2026-07-02 15:30:05,922 | INFO | Recommended Rate -5%
+2026-07-02 15:30:05,922 | INFO | ============================================================
+2026-07-02 15:30:05,922 | INFO | Speech Optimizer
+2026-07-02 15:30:05,923 | INFO | ============================================================
+2026-07-02 15:30:05,923 | INFO | Voice........ en-US-GuyNeural
+2026-07-02 15:30:05,923 | INFO | Rate......... -5%
+2026-07-02 15:30:05,923 | INFO | Pitch........ +1Hz
+2026-07-02 15:30:05,923 | INFO | Reading...... Conversational
+2026-07-02 15:30:05,923 | INFO | Complexity... Low
+2026-07-02 15:30:05,923 | INFO | Confidence... 1.00
+2026-07-02 15:30:05,923 | INFO | Speech Profile generated successfully.
+2026-07-02 15:30:05,924 | INFO | Building narration...
+2026-07-02 15:30:05,924 | INFO | 1 narration blocks generated.
+2026-07-02 15:30:05,925 | INFO | Narration exported to D:\Laboratorio de IA\Speech-AI\output\narration.txt
+2026-07-02 15:30:05,925 | INFO | Building speech text...
+2026-07-02 15:30:05,926 | INFO | Speech text generated.
+2026-07-02 15:30:05,926 | INFO | Speech text exported to D:\Laboratorio de IA\Speech-AI\output\speech.txt
+2026-07-02 15:30:05,927 | INFO | ============================================================
+2026-07-02 15:30:05,927 | INFO | Speech Service
+2026-07-02 15:30:05,927 | INFO | ============================================================
+2026-07-02 15:30:05,927 | INFO | Characters: 6362
+2026-07-02 15:30:05,927 | INFO | Provider initialized: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-02 15:30:05,927 | INFO | Provider: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-02 15:30:05,927 | INFO | TTS Engine initialized with provider: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-02 15:30:05,927 | INFO | ============================================================
+2026-07-02 15:30:05,927 | INFO | TTS Engine
+2026-07-02 15:30:05,927 | INFO | ============================================================
+2026-07-02 15:30:05,927 | INFO | Provider.....: EdgeProvider
+2026-07-02 15:30:05,927 | INFO | Characters...: 6362
+2026-07-02 15:30:05,927 | INFO | Output.......: D:\Laboratorio de IA\Speech-AI\output\Audio_Governance_SouthAmerica.mp3
+2026-07-02 15:30:05,929 | INFO | Generating audio...
+2026-07-02 15:30:05,929 | INFO | Voice.....: en-US-GuyNeural
+2026-07-02 15:30:05,929 | INFO | Rate......: -5%
+2026-07-02 15:30:05,929 | INFO | Pitch.....: +1Hz
+2026-07-02 15:30:05,929 | INFO | Volume....: +0%
+2026-07-02 15:30:10,924 | INFO | Audio generated successfully.
+2026-07-02 15:30:10,927 | INFO | TTS finished successfully.
+2026-07-02 15:30:10,927 | INFO | Speech synthesis completed.
+2026-07-02 15:30:10,927 | INFO | Pipeline finished
+2026-07-02 17:33:59,434 | INFO | Pipeline started
+2026-07-02 17:33:59,434 | INFO | Starting Text Analyzer
+2026-07-02 17:33:59,434 | INFO | Loading script...
+2026-07-02 17:33:59,434 | INFO | Normalizing text...
+2026-07-02 17:33:59,434 | INFO | Building Presentation...
+2026-07-02 17:33:59,434 | INFO | Detecting slides...
+2026-07-02 17:33:59,434 | INFO | Calculating statistics...
+2026-07-02 17:33:59,434 | INFO | Text Analyzer completed
+2026-07-02 17:33:59,434 | INFO | ============================================================
+2026-07-02 17:33:59,434 | INFO | Speech Intelligence Engine
+2026-07-02 17:33:59,434 | INFO | ============================================================
+2026-07-02 17:33:59,434 | INFO | Detecting language...
+2026-07-02 17:33:59,647 | INFO | Language detected: English (100.00%)
+2026-07-02 17:33:59,647 | INFO | Language detected: en
+2026-07-02 17:33:59,647 | INFO | Selecting voice for language: en
+2026-07-02 17:33:59,647 | INFO | Voice selected: en-US-GuyNeural
+2026-07-02 17:33:59,647 | INFO | Running Speech Analyzer...
+2026-07-02 17:33:59,647 | INFO | Speech Analyzer completed.
+2026-07-02 17:33:59,647 | INFO | Calculating speech timing...
+2026-07-02 17:33:59,647 | INFO | Complexity..... Low
+2026-07-02 17:33:59,647 | INFO | Recommended WPM 150
+2026-07-02 17:33:59,647 | INFO | Recommended Rate -5%
+2026-07-02 17:33:59,647 | INFO | ============================================================
+2026-07-02 17:33:59,647 | INFO | Speech Optimizer
+2026-07-02 17:33:59,647 | INFO | ============================================================
+2026-07-02 17:33:59,647 | INFO | Voice........ en-US-GuyNeural
+2026-07-02 17:33:59,647 | INFO | Rate......... -5%
+2026-07-02 17:33:59,647 | INFO | Pitch........ +1Hz
+2026-07-02 17:33:59,647 | INFO | Reading...... Conversational
+2026-07-02 17:33:59,647 | INFO | Complexity... Low
+2026-07-02 17:33:59,647 | INFO | Confidence... 1.00
+2026-07-02 17:33:59,647 | INFO | Speech Profile generated successfully.
+2026-07-02 17:33:59,647 | INFO | Building narration...
+2026-07-02 17:33:59,647 | INFO | 1 narration blocks generated.
+2026-07-02 17:33:59,647 | INFO | Narration exported to D:\Laboratorio de IA\Speech-AI\output\narration.txt
+2026-07-02 17:33:59,647 | INFO | Building speech text...
+2026-07-02 17:33:59,663 | INFO | Speech text generated.
+2026-07-02 17:33:59,663 | INFO | Speech text exported to D:\Laboratorio de IA\Speech-AI\output\speech.txt
+2026-07-02 17:33:59,663 | INFO | ============================================================
+2026-07-02 17:33:59,663 | INFO | Speech Service
+2026-07-02 17:33:59,663 | INFO | ============================================================
+2026-07-02 17:33:59,663 | INFO | Characters: 6362
+2026-07-02 17:33:59,663 | INFO | Provider initialized: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-02 17:33:59,663 | INFO | Provider: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-02 17:33:59,663 | INFO | TTS Engine initialized with provider: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-02 17:33:59,663 | INFO | ============================================================
+2026-07-02 17:33:59,663 | INFO | TTS Engine
+2026-07-02 17:33:59,663 | INFO | ============================================================
+2026-07-02 17:33:59,663 | INFO | Provider.....: EdgeProvider
+2026-07-02 17:33:59,663 | INFO | Characters...: 6362
+2026-07-02 17:33:59,663 | INFO | Output.......: D:\Laboratorio de IA\Speech-AI\output\Audio_Governance_SouthAmerica.mp3
+2026-07-02 17:33:59,663 | INFO | Generating audio...
+2026-07-02 17:33:59,663 | INFO | Voice.....: en-US-GuyNeural
+2026-07-02 17:33:59,663 | INFO | Rate......: -5%
+2026-07-02 17:33:59,663 | INFO | Pitch.....: +1Hz
+2026-07-02 17:33:59,663 | INFO | Volume....: +0%
+2026-07-02 17:34:05,247 | INFO | Audio generated successfully.
+2026-07-02 17:34:05,251 | INFO | TTS finished successfully.
+2026-07-02 17:34:05,251 | INFO | Speech synthesis completed.
+2026-07-02 17:34:05,251 | INFO | Pipeline finished
+2026-07-02 17:37:48,646 | INFO | Pipeline started
+2026-07-02 17:37:48,646 | INFO | Starting Text Analyzer
+2026-07-02 17:37:48,646 | INFO | Loading script...
+2026-07-02 17:37:48,646 | INFO | Normalizing text...
+2026-07-02 17:37:48,646 | INFO | Building Presentation...
+2026-07-02 17:37:48,646 | INFO | Detecting slides...
+2026-07-02 17:37:48,648 | INFO | Calculating statistics...
+2026-07-02 17:37:48,648 | INFO | Text Analyzer completed
+2026-07-02 17:37:48,648 | INFO | ============================================================
+2026-07-02 17:37:48,648 | INFO | Speech Intelligence Engine
+2026-07-02 17:37:48,648 | INFO | ============================================================
+2026-07-02 17:37:48,648 | INFO | Detecting language...
+2026-07-02 17:37:48,844 | INFO | Language detected: English (100.00%)
+2026-07-02 17:37:48,846 | INFO | Language detected: en
+2026-07-02 17:37:48,846 | INFO | Selecting voice for language: en
+2026-07-02 17:37:48,846 | INFO | Voice selected: en-US-GuyNeural
+2026-07-02 17:37:48,846 | INFO | Running Speech Analyzer...
+2026-07-02 17:37:48,846 | INFO | Speech Analyzer completed.
+2026-07-02 17:37:48,846 | INFO | Calculating speech timing...
+2026-07-02 17:37:48,846 | INFO | Complexity..... Low
+2026-07-02 17:37:48,846 | INFO | Recommended WPM 150
+2026-07-02 17:37:48,846 | INFO | Recommended Rate -5%
+2026-07-02 17:37:48,846 | INFO | ============================================================
+2026-07-02 17:37:48,846 | INFO | Speech Optimizer
+2026-07-02 17:37:48,846 | INFO | ============================================================
+2026-07-02 17:37:48,846 | INFO | Voice........ en-US-GuyNeural
+2026-07-02 17:37:48,846 | INFO | Rate......... -5%
+2026-07-02 17:37:48,846 | INFO | Pitch........ +1Hz
+2026-07-02 17:37:48,846 | INFO | Reading...... Conversational
+2026-07-02 17:37:48,846 | INFO | Complexity... Low
+2026-07-02 17:37:48,846 | INFO | Confidence... 1.00
+2026-07-02 17:37:48,846 | INFO | Speech Profile generated successfully.
+2026-07-02 17:37:48,846 | INFO | Building narration...
+2026-07-02 17:37:48,846 | INFO | 1 narration blocks generated.
+2026-07-02 17:37:48,846 | INFO | Narration exported to D:\Laboratorio de IA\Speech-AI\output\narration.txt
+2026-07-02 17:37:48,846 | INFO | Building speech text...
+2026-07-02 17:37:48,846 | INFO | Speech text generated.
+2026-07-02 17:37:48,846 | INFO | Speech text exported to D:\Laboratorio de IA\Speech-AI\output\speech.txt
+2026-07-02 17:37:48,846 | INFO | ============================================================
+2026-07-02 17:37:48,846 | INFO | Speech Service
+2026-07-02 17:37:48,846 | INFO | ============================================================
+2026-07-02 17:37:48,846 | INFO | Characters: 6362
+2026-07-02 17:40:20,394 | INFO | Pipeline started
+2026-07-02 17:40:20,394 | INFO | Starting Text Analyzer
+2026-07-02 17:40:20,394 | INFO | Loading script...
+2026-07-02 17:40:20,394 | INFO | Normalizing text...
+2026-07-02 17:40:20,394 | INFO | Building Presentation...
+2026-07-02 17:40:20,394 | INFO | Detecting slides...
+2026-07-02 17:40:20,394 | INFO | Calculating statistics...
+2026-07-02 17:40:20,394 | INFO | Text Analyzer completed
+2026-07-02 17:40:20,394 | INFO | ============================================================
+2026-07-02 17:40:20,394 | INFO | Speech Intelligence Engine
+2026-07-02 17:40:20,394 | INFO | ============================================================
+2026-07-02 17:40:20,394 | INFO | Detecting language...
+2026-07-02 17:40:20,679 | INFO | Language detected: English (100.00%)
+2026-07-02 17:40:20,679 | INFO | Language detected: en
+2026-07-02 17:40:20,679 | INFO | Selecting voice for language: en
+2026-07-02 17:40:20,680 | INFO | Voice selected: en-US-GuyNeural
+2026-07-02 17:40:20,680 | INFO | Running Speech Analyzer...
+2026-07-02 17:40:20,680 | INFO | Speech Analyzer completed.
+2026-07-02 17:40:20,680 | INFO | Calculating speech timing...
+2026-07-02 17:40:20,681 | INFO | Complexity..... Low
+2026-07-02 17:40:20,681 | INFO | Recommended WPM 150
+2026-07-02 17:40:20,681 | INFO | Recommended Rate -5%
+2026-07-02 17:40:20,681 | INFO | ============================================================
+2026-07-02 17:40:20,681 | INFO | Speech Optimizer
+2026-07-02 17:40:20,681 | INFO | ============================================================
+2026-07-02 17:40:20,681 | INFO | Voice........ en-US-GuyNeural
+2026-07-02 17:40:20,681 | INFO | Rate......... -5%
+2026-07-02 17:40:20,681 | INFO | Pitch........ +1Hz
+2026-07-02 17:40:20,681 | INFO | Reading...... Conversational
+2026-07-02 17:40:20,681 | INFO | Complexity... Low
+2026-07-02 17:40:20,681 | INFO | Confidence... 1.00
+2026-07-02 17:40:20,681 | INFO | Speech Profile generated successfully.
+2026-07-02 17:40:20,682 | INFO | Building narration...
+2026-07-02 17:40:20,682 | INFO | 1 narration blocks generated.
+2026-07-02 17:40:20,684 | INFO | Narration exported to D:\Laboratorio de IA\Speech-AI\output\narration.txt
+2026-07-02 17:40:20,684 | INFO | Building speech text...
+2026-07-02 17:40:20,684 | INFO | Speech text generated.
+2026-07-02 17:40:20,686 | INFO | Speech text exported to D:\Laboratorio de IA\Speech-AI\output\speech.txt
+2026-07-02 17:40:20,686 | INFO | ============================================================
+2026-07-02 17:40:20,686 | INFO | Speech Service
+2026-07-02 17:40:20,686 | INFO | ============================================================
+2026-07-02 17:40:20,686 | INFO | Characters: 6362
+2026-07-02 17:40:20,686 | INFO | Provider initialized: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-02 17:40:20,686 | INFO | Provider: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-02 17:40:20,686 | INFO | TTS Engine initialized with provider: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-02 17:40:20,686 | INFO | ============================================================
+2026-07-02 17:40:20,687 | INFO | TTS Engine
+2026-07-02 17:40:20,687 | INFO | ============================================================
+2026-07-02 17:40:20,687 | INFO | Provider.....: EdgeProvider
+2026-07-02 17:40:20,687 | INFO | Characters...: 6362
+2026-07-02 17:40:20,687 | INFO | Output.......: D:\Laboratorio de IA\Speech-AI\output\Audio_Governance_SouthAmerica.mp3
+2026-07-02 17:40:20,689 | INFO | Generating audio...
+2026-07-02 17:40:20,689 | INFO | Voice.....: en-US-GuyNeural
+2026-07-02 17:40:20,689 | INFO | Rate......: -5%
+2026-07-02 17:40:20,689 | INFO | Pitch.....: +1Hz
+2026-07-02 17:40:20,689 | INFO | Volume....: +0%
+2026-07-02 17:40:26,661 | INFO | Audio generated successfully.
+2026-07-02 17:40:26,665 | INFO | TTS finished successfully.
+2026-07-02 17:40:26,667 | INFO | Speech synthesis completed.
+2026-07-02 17:40:26,667 | INFO | Pipeline finished
+2026-07-02 17:40:49,022 | INFO | Pipeline started
+2026-07-02 17:40:49,022 | INFO | Starting Text Analyzer
+2026-07-02 17:40:49,022 | INFO | Loading script...
+2026-07-02 17:40:49,022 | INFO | Normalizing text...
+2026-07-02 17:40:49,022 | INFO | Building Presentation...
+2026-07-02 17:40:49,022 | INFO | Detecting slides...
+2026-07-02 17:40:49,022 | INFO | Calculating statistics...
+2026-07-02 17:40:49,022 | INFO | Text Analyzer completed
+2026-07-02 17:40:49,022 | INFO | ============================================================
+2026-07-02 17:40:49,022 | INFO | Speech Intelligence Engine
+2026-07-02 17:40:49,022 | INFO | ============================================================
+2026-07-02 17:40:49,022 | INFO | Detecting language...
+2026-07-02 17:40:49,224 | INFO | Language detected: English (100.00%)
+2026-07-02 17:40:49,224 | INFO | Language detected: en
+2026-07-02 17:40:49,224 | INFO | Selecting voice for language: en
+2026-07-02 17:40:49,224 | INFO | Voice selected: en-US-GuyNeural
+2026-07-02 17:40:49,224 | INFO | Running Speech Analyzer...
+2026-07-02 17:40:49,224 | INFO | Speech Analyzer completed.
+2026-07-02 17:40:49,224 | INFO | Calculating speech timing...
+2026-07-02 17:40:49,224 | INFO | Complexity..... Low
+2026-07-02 17:40:49,224 | INFO | Recommended WPM 150
+2026-07-02 17:40:49,224 | INFO | Recommended Rate -5%
+2026-07-02 17:40:49,224 | INFO | ============================================================
+2026-07-02 17:40:49,224 | INFO | Speech Optimizer
+2026-07-02 17:40:49,224 | INFO | ============================================================
+2026-07-02 17:40:49,224 | INFO | Voice........ en-US-GuyNeural
+2026-07-02 17:40:49,224 | INFO | Rate......... -5%
+2026-07-02 17:40:49,224 | INFO | Pitch........ +1Hz
+2026-07-02 17:40:49,224 | INFO | Reading...... Conversational
+2026-07-02 17:40:49,224 | INFO | Complexity... Low
+2026-07-02 17:40:49,224 | INFO | Confidence... 1.00
+2026-07-02 17:40:49,224 | INFO | Speech Profile generated successfully.
+2026-07-02 17:40:49,224 | INFO | Building narration...
+2026-07-02 17:40:49,224 | INFO | 1 narration blocks generated.
+2026-07-02 17:40:49,224 | INFO | Narration exported to D:\Laboratorio de IA\Speech-AI\output\narration.txt
+2026-07-02 17:40:49,224 | INFO | Building speech text...
+2026-07-02 17:40:49,224 | INFO | Speech text generated.
+2026-07-02 17:40:49,224 | INFO | Speech text exported to D:\Laboratorio de IA\Speech-AI\output\speech.txt
+2026-07-02 17:40:49,224 | INFO | ============================================================
+2026-07-02 17:40:49,224 | INFO | Speech Service
+2026-07-02 17:40:49,224 | INFO | ============================================================
+2026-07-02 17:40:49,224 | INFO | Characters: 6362
+2026-07-02 17:40:49,224 | INFO | Provider initialized: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-02 17:40:49,224 | INFO | Provider: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-02 17:40:49,224 | INFO | TTS Engine initialized with provider: Microsoft Edge TTS (Microsoft) v1.1.0
+2026-07-02 17:40:49,224 | INFO | ============================================================
+2026-07-02 17:40:49,224 | INFO | TTS Engine
+2026-07-02 17:40:49,224 | INFO | ============================================================
+2026-07-02 17:40:49,224 | INFO | Provider.....: EdgeProvider
+2026-07-02 17:40:49,224 | INFO | Characters...: 6362
+2026-07-02 17:40:49,224 | INFO | Output.......: D:\Laboratorio de IA\Speech-AI\output\Audio_Governance_SouthAmerica.mp3
+2026-07-02 17:40:49,240 | INFO | Generating audio...
+2026-07-02 17:40:49,240 | INFO | Voice.....: en-US-GuyNeural
+2026-07-02 17:40:49,240 | INFO | Rate......: -5%
+2026-07-02 17:40:49,240 | INFO | Pitch.....: +1Hz
+2026-07-02 17:40:49,240 | INFO | Volume....: +0%
+2026-07-02 17:40:54,979 | INFO | Audio generated successfully.
+2026-07-02 17:40:54,995 | INFO | TTS finished successfully.
+2026-07-02 17:40:54,995 | INFO | Speech synthesis completed.
+2026-07-02 17:40:54,995 | INFO | Pipeline finished
