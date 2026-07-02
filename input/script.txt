@@ -1,212 +1,269 @@
-Slide 1 – AI Governance Overview
+# Agentic AI: When Artificial Intelligence Stops Waiting and Starts Acting
 
+Good morning, everyone.
 
-Hello everyone.
+I'd like to begin with a simple question.
 
-Good morning, good afternoon and good evening, depending on where you are joining us from.
+**What if, tomorrow morning, you arrived at work and your first meeting had already been prepared?**
 
-Thank you very much for being here today.
+The presentation was created.
 
-My name is Rodrigo, Currently, I am responsible for AI projects in South America, supporting all business areas and their demands.
+The market analysis was completed.
 
-Today I would like to share how we are building AI Governance in South America.
+The competitors had been researched.
 
-Our region includes several countries and many different business areas.
+The financial risks had been identified.
 
-Because of this diversity, we needed a simple governance model that allows innovation while maintaining security, compliance and business value.
+The meeting invitations had been sent.
 
-Our vision is not only to develop AI solutions.
+And all of this happened before you even opened your laptop.
 
-Our goal is to create an environment where AI can be used responsibly, efficiently and at scale.
+This isn't science fiction.
 
-Our governance is based on four main pillars.
+It isn't a vision for the next decade.
 
-The first pillar is Governance.
-It defines how decisions are made.
+It is happening now.
 
-The second pillar is AI Platforms and Tools.
-It provides employees with approved technologies.
+Welcome to the era of **Agentic Artificial Intelligence**.
 
-The third pillar is AI Culture and Knowledge.
-It focuses on education and adoption.
+For years, we've interacted with AI in a very simple way.
 
-Finally, the fourth pillar is AI Use Cases.
-It helps transform business ideas into real solutions.
+We asked a question.
 
-Together, these four pillars create one complete AI ecosystem.
+AI gave us an answer.
 
+We wrote a prompt.
 
-Slide 2 – Organization Structure
+AI generated content.
 
-This slide shows how our organization is structured.
+It was impressive.
 
-AI Governance starts with executive sponsorship.
+It changed how we work.
 
-Our executive sponsors define priorities and support strategic decisions.
+But it was still reactive.
 
-The AI Governance Manager coordinates all governance activities across South America.
+The human always had to initiate every step.
 
-We also have AI experts who provide technical guidance and support project implementation.
+Today, that model is evolving.
 
-One important part of our model is the Business Ambassador network.
+We're moving from AI that **responds**...
 
-Business Ambassadors represent different business functions.
+to AI that **reasons**.
 
-They understand local business challenges and identify opportunities where AI can create value.
+From AI that **creates**...
 
-Working together with them, we have our Functional ICT teams.
+to AI that **acts**.
 
-They evaluate technical feasibility and support solution development.
+This is the difference between having a search engine...
 
-Another important connection is with the Global Center of Excellence for Generative AI.
+and having a trusted colleague.
 
-This collaboration allows us to align regional initiatives with global standards, best practices and corporate strategy.
+Imagine asking someone,
 
-In summary, our model combines business, technology and governance into one collaborative structure.
+*"Help me launch a new product."*
 
+A traditional AI might generate a marketing plan.
 
-Slide 3 – Governance Committees
+An Agentic AI asks a completely different question:
 
+*"What is the objective?"*
 
+Then it begins working.
 
-Governance is not only about approving projects.
+It researches the market.
 
-It is also about creating transparency, reducing risks and supporting innovation.
+Analyzes competitors.
 
-For this reason, we created three governance committees.
+Creates financial projections.
 
-The first committee is the Executive Committee.
+Builds a project plan.
 
-This committee meets every quarter.
+Identifies potential risks.
 
-Its main responsibility is strategic decision-making.
+Schedules meetings.
 
-It reviews important AI initiatives, monitors business results and defines priorities for the region.
+Creates presentations.
 
-The second committee is the Operative Committee.
+Coordinates specialists.
 
-This committee meets every month.
+And continuously adapts as new information becomes available.
 
-It works much closer to day-to-day activities.
+It doesn't simply answer a request.
 
-The team supports AI literacy, evaluates new opportunities, helps teams use the approved AI platforms and follows project execution.
+It pursues a goal.
 
-It is also responsible for sharing successful initiatives across different business areas.
+That changes everything.
 
-The third committee is the Regulatory Committee.
+Because businesses are not built on isolated tasks.
 
-This committee focuses on responsible AI.
+Businesses are built on workflows.
 
-It evaluates privacy, security, legal requirements and ethical risks.
+On collaboration.
 
-It also monitors changes in AI regulations in different countries.
+On decisions.
 
-The objective is to make sure AI solutions are compliant before they are implemented.
+On thousands of interconnected activities that happen every single day.
 
-Together, these three committees provide strategic direction, operational support and regulatory oversight.
+And that's exactly where Agentic AI creates value.
 
+Think about healthcare.
 
-Slide 4 – Business Ambassadors Network
+An intelligent agent can help physicians review patient histories, analyze laboratory results, identify treatment guidelines, coordinate appointments, and prepare clinical documentation.
 
+Not to replace doctors...
 
-One of the biggest success factors of our governance model is our Business Ambassador network.
+but to give them more time to care for patients.
 
-Instead of having AI managed only by the IT organization, we involve people from every business area.
+Think about manufacturing.
 
-These ambassadors help identify business problems that AI can solve.
+An AI agent can monitor production lines, predict equipment failures before they happen, optimize inventory, coordinate suppliers, and reduce operational costs.
 
-They also encourage collaboration between departments.
+Think about financial services.
 
-Another important responsibility is promoting AI adoption inside their teams.
+Agents can detect fraud in real time, analyze investment opportunities, prepare compliance reports, and assist advisors in serving customers faster and more accurately.
 
-To support this community, we created a central AI portal.
+This is no longer about automation.
 
-This portal contains governance documentation, AI news, training materials, videos, available AI tools and useful references.
+It is about intelligent collaboration.
 
-It has become the main communication channel for AI inside South America.
+Another fascinating aspect of Agentic AI is that one agent rarely works alone.
 
-Our objective is to make AI knowledge available to everyone, regardless of their technical background.
+We're entering a world of teams composed of digital specialists.
 
+Imagine having a financial analyst...
 
-Slide 5 – AI Community and Knowledge Sharing
+a software engineer...
 
+a cybersecurity expert...
 
+a legal advisor...
 
-Technology alone is not enough.
+and a project manager...
 
-People are the key to successful AI adoption.
+working together 24 hours a day.
 
-Because of this, we invest heavily in knowledge sharing.
+Not as people.
 
-During the year we organize AI events for all employees.
+But as specialized AI agents collaborating toward a common objective.
 
-Internal AI Ambassadors present solutions already implemented inside Stellantis.
+This concept is known as **multi-agent systems**.
 
-These presentations allow other teams to learn from successful projects.
+Instead of one powerful model trying to solve every problem, organizations build networks of specialized agents that communicate, delegate tasks, verify each other's work, and deliver better outcomes together.
 
-We also invite external companies and technology partners.
+It begins to look surprisingly similar to how successful human organizations operate.
 
-They share market trends, new technologies and practical experiences.
+But with incredible speed.
 
-These sessions are open to the entire organization.
+However...
 
-They help create curiosity, inspire innovation and increase AI maturity across the region.
+With greater capability comes greater responsibility.
 
-Every event also creates new networking opportunities between business and technology teams.
+If AI can make decisions...
 
+access enterprise systems...
 
-Slide 6 – AI Portfolio and Results
+communicate with customers...
 
+and execute business processes...
 
+then governance becomes essential.
 
-This final slide shows our AI portfolio.
+Trust becomes essential.
 
-Today, South America has more than 280 AI initiatives registered in our inventory.
+Security becomes essential.
 
-These initiatives cover almost every business function, including Manufacturing, Supply Chain, Engineering, Finance, Human Resources and Sales.
+Transparency becomes essential.
 
-Each initiative follows a governance process from idea generation to production.
+The future will not belong to organizations that simply deploy AI.
 
-Some projects are already delivering business value.
+It will belong to organizations that deploy AI responsibly.
 
-Others are currently under development, proof of concept or business evaluation.
+Human judgment will remain indispensable.
 
-We also classify projects into two categories.
+Ethics will remain indispensable.
 
-The first category is Self-Service AI.
+Leadership will become even more important.
 
-These are solutions that employees can safely create using approved AI platforms.
+Because the real challenge isn't building intelligent machines.
 
-The second category is Non Self-Service AI.
+The real challenge is building intelligent organizations.
 
-These projects usually require software development, integration or more advanced governance.
+Organizations where humans and AI complement one another.
 
-Having one centralized inventory gives us complete visibility of our AI landscape.
+Where repetitive work disappears.
 
-It allows us to monitor progress, prioritize investments, measure business impact and identify opportunities for collaboration between different teams.
+Where creativity expands.
 
-Most importantly, it helps us avoid duplicated efforts and accelerate innovation across the region.
+Where innovation accelerates.
 
-Closing
+Throughout history, every major technological revolution has changed the skills people needed.
 
+The Industrial Revolution rewarded mechanical skills.
 
+The Digital Revolution rewarded computer skills.
 
-To conclude,
+The AI Revolution will reward something even more valuable.
 
-AI Governance is much more than a process.
+The ability to collaborate with intelligence itself.
 
-It is the foundation that allows innovation to happen in a safe, responsible and scalable way.
+The professionals who succeed won't necessarily be the ones who know the most about AI.
 
-Our experience in South America shows that successful AI adoption depends on three key elements:
+They will be the ones who know how to ask the right questions...
 
-strong governance,
-collaboration between business and technology,
-and continuous learning.
+define clear objectives...
 
-We are still evolving, but we have already built a solid foundation that supports both local innovation and global alignment.
+evaluate results critically...
 
-We hope our experience can also contribute to discussions across other regions.
+and make better decisions alongside intelligent agents.
 
-Thank you very much for your attention.
+That is a profound shift.
 
-It will be a pleasure to answer your questions.
+Because AI is no longer just becoming another software tool.
+
+It is becoming a teammate.
+
+And perhaps that's the most exciting idea of all.
+
+The future isn't about humans versus AI.
+
+It isn't even about humans using AI.
+
+The future is about humans working **with** AI.
+
+Together.
+
+Each contributing what they do best.
+
+Machines bringing speed, scale, and consistency.
+
+People bringing creativity, empathy, ethics, and vision.
+
+That partnership has the potential to redefine every industry represented in this room.
+
+We're standing at the beginning of one of the most significant technological transformations of our lifetime.
+
+The organizations that start experimenting today...
+
+learning today...
+
+and building responsibly today...
+
+will become the leaders of tomorrow.
+
+So I'd like to leave you with one final thought.
+
+The question is no longer,
+
+**"Will AI change the way we work?"**
+
+It already has.
+
+The real question is,
+
+**"When every company has access to intelligent agents... what will make yours different?"**
+
+The answer won't be the technology.
+
+The answer will be the people who know how to lead it.
+
+Thank you.
