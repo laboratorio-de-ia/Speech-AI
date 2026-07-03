@@ -233,3 +233,20 @@ Sprint 9 (IA Avançada)
 │                                                                                                                                    │
 └────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 
+Input Text
+   ↓
+Sentence Engine
+   ↓
+Lexical Analyzer
+   ↓
+Clause Analyzer
+   ↓
+Speech Block Builder
+   ↓
+Pause Planner
+   ↓
+SSML Engine
+   ↓
+TTS Provider (Edge / Azure / ElevenLabs / Google)
+   ↓
+Audio Output

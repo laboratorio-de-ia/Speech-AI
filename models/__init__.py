@@ -15,6 +15,8 @@ from .presentation import Presentation
 from .slide import Slide
 from .statistics import Statistics
 from .voice_profile import VoiceProfile
+from .clause import Clause
+from .clause import ClauseType
 
 __all__ = [
     "Language",
