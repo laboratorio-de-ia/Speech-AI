@@ -1,362 +1,277 @@
-Slide 1 – AI Governance Overview
+SpeechAI Enterprise 2.0
 ...
-Hello everyone.
-
-Good morning, .
+A Plataforma de Inteligência de Fala construída para a nova geração da Inteligência Artificial
+Vivemos uma nova era da Inteligência Artificial.
+ Empresas do mundo inteiro estão automatizando processos, .
 .
 .
- good afternoon and good evening, .
+ produzindo conteúdos e criando experiências digitais utilizando voz sintetizada.
+ Entretanto, .
 .
 .
- depending on where you are joining us from.
-
-Thank you very much for being here today.
-
-My name is Rodrigo, .
+ a maioria das soluções disponíveis ainda apresenta limitações significativas:
 .
 .
- Currently, .
 .
+ dependência de serviços em nuvem, .
 .
- I am responsible for AI projects in South America, .
 .
+ custos recorrentes por token, .
 .
- supporting all business areas and their demands.
-
-Today I would like to share how we are building AI Governance in South America.
+.
+ restrições de uso, .
+.
+.
+ preocupações com privacidade e pouca inteligência na forma como interpretam o conteúdo.
 
-Our region includes several countries and many different business areas.
+O SpeechAI Enterprise 2.
+0 nasceu para resolver esse problema.
 
-Because of this diversity, .
+Mais do que um mecanismo de Text-to-Speech, .
 .
 .
- we needed a simple governance model that allows innovation while maintaining security, .
+ o SpeechAI é uma plataforma completa de Speech Intelligence capaz de compreender o conteúdo antes de transformá-lo em voz.
+ Em vez de simplesmente ler um texto, .
 .
 .
- compliance and business value.
-
-Our vision is not only to develop AI solutions.
-
-Our goal is to create an environment where AI can be used responsibly, .
+ a plataforma analisa idioma, .
 .
 .
- efficiently and at scale.
-
-Our governance is based on four main pillars.
-
-The first pillar is Governance.
-
-It defines how decisions are made.
-
-The second pillar is AI Platforms and Tools.
-
-It provides employees with approved technologies.
-
-The third pillar is AI Culture and Knowledge.
-
-It focuses on education and adoption.
-
-Finally, .
+ estrutura linguística, .
 .
 .
- the fourth pillar is AI Use Cases.
-
-It helps transform business ideas into real solutions.
-
-Together, .
+ complexidade, .
 .
 .
- these four pillars create one complete AI ecosystem.
-
-
-...
-Slide 2 – Organization Structure
-...
-This slide shows how our organization is structured.
-
-AI Governance starts with executive sponsorship.
-
-Our executive sponsors define priorities and support strategic decisions.
-
-The AI Governance Manager coordinates all governance activities across South America.
-
-We also have AI experts who provide technical guidance and support project implementation.
-
-One important part of our model is the Business Ambassador network.
-
-Business Ambassadors represent different business functions.
-
-They understand local business challenges and identify opportunities where AI can create value.
-
-Working together with them, .
+ ritmo, .
 .
 .
- we have our Functional ICT teams.
-
-They evaluate technical feasibility and support solution development.
-
-Another important connection is with the Global Center of Excellence for Generative AI.
-
-This collaboration allows us to align regional initiatives with global standards, .
+ pausas, .
 .
 .
- best practices and corporate strategy.
-
-In summary, .
+ estilo de leitura e contexto, .
 .
 .
- our model combines business, .
+ produzindo uma narração muito mais natural, .
 .
 .
- technology and governance into one collaborative structure.
-
+ consistente e profissional.
 
-...
-Slide 3 – Governance Committees
-...
-Governance is not only about approving projects.
-
-It is also about creating transparency, .
+Sua arquitetura foi desenvolvida seguindo princípios Enterprise, .
 .
 .
- reducing risks and supporting innovation.
-
-For this reason, .
+ com componentes desacoplados, .
 .
 .
- we created three governance committees.
-
-The first committee is the Executive Committee.
-
-This committee meets every quarter.
-
-Its main responsibility is strategic decision-making.
-
-It reviews important AI initiatives, .
+ arquitetura baseada em Providers, .
 .
 .
- monitors business results and defines priorities for the region.
-
-The second committee is the Operative Committee.
-
-This committee meets every month.
+ pipeline modular, .
+.
+.
+ serviços especializados e modelos de domínio independentes.
+ Essa abordagem permite que novos recursos sejam incorporados continuamente sem comprometer a estabilidade da plataforma.
 
-It works much closer to day-to-day activities.
+O diferencial mais importante da versão 2.
+0 é a adoção do conceito Local AI First.
 
-The team supports AI literacy, .
+Enquanto grande parte do mercado depende de modelos hospedados em nuvem e cobrança por tokens, .
 .
 .
- evaluates new opportunities, .
+ o SpeechAI foi projetado para executar modelos de Inteligência Artificial localmente.
+ Isso significa que empresas podem utilizar modelos SLM (Small Language Models) executando em sua própria infraestrutura, .
 .
 .
- helps teams use the approved AI platforms and follows project execution.
+ eliminando custos recorrentes com APIs externas e garantindo total controle sobre dados sensíveis.
 
-It is also responsible for sharing successful initiatives across different business areas.
+Essa estratégia oferece benefícios que vão muito além da redução de custos.
 
-The third committee is the Regulatory Committee.
-
-This committee focuses on responsible AI.
-
-It evaluates privacy, .
+A execução local proporciona privacidade, .
 .
 .
- security, .
+ baixa latência, .
 .
 .
- legal requirements and ethical risks.
-
-It also monitors changes in AI regulations in different countries.
-
-The objective is to make sure AI solutions are compliant before they are implemented.
+ funcionamento offline, .
+.
+.
+ independência de fornecedores e previsibilidade financeira.
+ Organizações deixam de depender da disponibilidade de serviços externos e passam a controlar completamente o ciclo de vida da solução.
 
-Together, .
+A arquitetura do SpeechAI também é agnóstica em relação aos modelos de IA utilizados.
+ A plataforma pode trabalhar com modelos executados via Ollama, .
 .
 .
- these three committees provide strategic direction, .
+ llama.
+cpp, .
 .
 .
- operational support and regulatory oversight.
-
-
-...
-Slide 4 – Business Ambassadors Network
-...
-One of the biggest success factors of our governance model is our Business Ambassador network.
-
-Instead of having AI managed only by the IT organization, .
+ Microsoft Phi-3, .
 .
 .
- we involve people from every business area.
-
-These ambassadors help identify business problems that AI can solve.
-
-They also encourage collaboration between departments.
+ Mistral, .
+.
+.
+ Llama e futuros modelos especializados treinados especificamente para síntese de voz corporativa.
+ Essa flexibilidade protege o investimento realizado hoje e garante que a solução continue evoluindo conforme novas tecnologias surgirem.
 
-Another important responsibility is promoting AI adoption inside their teams.
+Outro diferencial importante é a separação entre inteligência determinística e inteligência generativa.
 
-To support this community, .
+O SpeechAI utiliza um pipeline híbrido.
+ Regras determinísticas realizam toda a análise estrutural do texto — identificando frases, .
 .
 .
- we created a central AI portal.
-
-This portal contains governance documentation, .
+ cláusulas, .
 .
 .
- AI news, .
+ conectivos, .
 .
 .
- training materials, .
+ pausas e blocos de narração — enquanto modelos de IA atuam apenas onde realmente agregam valor, .
 .
 .
- videos, .
+ como compreensão semântica, .
 .
 .
- available AI tools and useful references.
-
-It has become the main communication channel for AI inside South America.
-
-Our objective is to make AI knowledge available to everyone, .
+ identificação de intenção comunicacional, .
 .
 .
- regardless of their technical background.
-
-
-...
-Slide 5 – AI Community and Knowledge Sharing
-...
-Technology alone is not enough.
+ análise emocional e otimização do estilo de fala.
 
-People are the key to successful AI adoption.
-
-Because of this, .
+Esse modelo híbrido reduz drasticamente o consumo computacional, .
 .
 .
- we invest heavily in knowledge sharing.
-
-During the year we organize AI events for all employees.
-
-Internal AI Ambassadors present solutions already implemented inside Stellantis.
+ aumenta a previsibilidade dos resultados e mantém elevada qualidade na geração do áudio.
 
-These presentations allow other teams to learn from successful projects.
-
-We also invite external companies and technology partners.
-
-They share market trends, .
+A plataforma foi concebida para ser extensível desde sua fundação.
+ Novos motores de síntese podem ser adicionados através da arquitetura de Providers sem necessidade de alterações no restante do sistema.
+ Da mesma forma, .
 .
 .
- new technologies and practical experiences.
+ novos modelos de Inteligência Artificial podem ser incorporados simplesmente adicionando novos conectores à camada SLM Gateway.
 
-These sessions are open to the entire organization.
+Essa independência tecnológica torna o SpeechAI preparado para acompanhar a evolução da Inteligência Artificial pelos próximos anos.
 
-They help create curiosity, .
+Sua arquitetura também oferece recursos completos de observabilidade.
+ Cada etapa do pipeline pode ser monitorada, .
 .
 .
- inspire innovation and increase AI maturity across the region.
-
-Every event also creates new networking opportunities between business and technology teams.
-
-
-...
-Slide 6 – AI Portfolio and Results
-...
-This final slide shows our AI portfolio.
-
-Today, .
+ registrada e auditada, .
+.
+.
+ permitindo compreender exatamente como cada narração foi construída.
+ Métricas de qualidade, .
+.
+.
+ estatísticas linguísticas, .
+.
 .
+ tempo estimado, .
 .
- South America has more than 280 AI initiatives registered in our inventory.
+.
+ estratégia aplicada e parâmetros utilizados ficam disponíveis para análise e melhoria contínua.
 
-These initiatives cover almost every business function, .
+Além do mercado corporativo, .
 .
 .
- including Manufacturing, .
+ o SpeechAI possui aplicações em educação, .
 .
 .
- Supply Chain, .
+ treinamento, .
 .
 .
- Engineering, .
+ atendimento automatizado, .
 .
 .
- Finance, .
+ criação de conteúdo, .
 .
 .
- Human Resources and Sales.
-
-Each initiative follows a governance process from idea generation to production.
-
-Some projects are already delivering business value.
-
-Others are currently under development, .
+ acessibilidade, .
 .
 .
- proof of concept or business evaluation.
-
-We also classify projects into two categories.
-
-The first category is Self-Service AI.
-
-These are solutions that employees can safely create using approved AI platforms.
-
-The second category is Non Self-Service AI.
-
-These projects usually require software development, .
+ comunicação institucional, .
 .
 .
- integration or more advanced governance.
-
-Having one centralized inventory gives us complete visibility of our AI landscape.
-
-It allows us to monitor progress, .
+ plataformas de e-learning, .
 .
 .
- prioritize investments, .
+ geração automática de apresentações, .
 .
 .
- measure business impact and identify opportunities for collaboration between different teams.
+ assistentes virtuais e diversos outros cenários onde a qualidade da comunicação é um fator crítico.
 
-Most importantly, .
+Mais do que converter texto em áudio, .
 .
 .
- it helps us avoid duplicated efforts and accelerate innovation across the region.
-
-Closing
-To conclude, .
+ o SpeechAI interpreta, .
 .
 .
+ compreende e decide a melhor forma de comunicar uma informação.
 
-AI Governance is much more than a process.
+Esse é o verdadeiro conceito de Speech Intelligence.
 
-It is the foundation that allows innovation to happen in a safe, .
+A evolução para a versão 2.
+0 marca o início de uma nova etapa da plataforma.
+ A Sprint 9 introduzirá uma camada completa de Inteligência Artificial Local responsável por compreender emoções, .
+.
+.
+ identificar intenção comunicacional, .
 .
 .
- responsible and scalable way.
+ interpretar contexto semântico e otimizar automaticamente toda a estratégia de narração.
 
-Our experience in South America shows that successful AI adoption depends on three key elements:
+Com essa evolução, .
 .
 .
+ o SpeechAI deixa de ser apenas um sistema de síntese de voz para tornar-se uma plataforma cognitiva capaz de produzir narrações adaptativas, .
 .
-
-strong governance, .
 .
+ inteligentes e altamente naturais, .
 .
-
-collaboration between business and technology, .
 .
+ preservando um dos princípios mais importantes da solução:
 .
-
-and continuous learning.
+.
+.
+ independência tecnológica, .
+.
+.
+ controle total da infraestrutura e custo operacional previsível.
 
-We are still evolving, .
+O SpeechAI Enterprise 2.
+0 representa uma nova geração de plataformas de voz corporativa.
+ Uma arquitetura construída para organizações que desejam utilizar Inteligência Artificial de forma estratégica, .
 .
 .
- but we have already built a solid foundation that supports both local innovation and global alignment.
+ escalável e sustentável, .
+.
+.
+ sem abrir mão da segurança, .
+.
+.
+ da privacidade e da autonomia sobre seus próprios dados.
 
-We hope our experience can also contribute to discussions across other regions.
+SpeechAI Enterprise 2.
+0 não é apenas um software de Text-to-Speech.
 
-Thank you very much for your attention.
+É uma plataforma de Speech Intelligence, .
+.
+.
+ construída sobre uma arquitetura Enterprise, .
+.
+.
+ preparada para IA Local (SLM), .
+.
+.
+ com pipeline cognitivo próprio, .
+.
+.
+ zero dependência de tokens e foco em escalabilidade, .
+.
+.
+ governança e autonomia tecnológica.
 
-It will be a pleasure to answer your questions.
+Transformamos texto em comunicação inteligente.
 
 
 ...
